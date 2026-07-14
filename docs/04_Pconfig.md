@@ -44,7 +44,7 @@ The following table summarizes the primary pin assignments for all the component
 #### PixyCam 2.1 (Removed)
 *   **Role:** Deployed on early prototype revisions for color signature tracking. 
 *   **The Technical Failure:** It was decommissioned because ambient lighting variations and venue glare frequently caused tracking drops, forcing us to constantly manually tune color thresholds.
-*   **For more information regarding removal, please refer to:** [2.2 Core Processing Shift](/02_HComponents.md).
+*   **For more information regarding removal, please refer to:** [2.2 Core Processing Shift](docs/02_HComponents.md).
 
 #### Huskylens AI Camera (Current Primary Vision)
 *   **Role:** Serves as our primary visual tracking engine. It processes complex color block tracking internally via its onboard neural network processor, letting the robot lock onto track markers reliably without bogging down the main computer.
@@ -54,7 +54,7 @@ The following table summarizes the primary pin assignments for all the component
     *   **SCL:** Wire to GPIO3 (and pulled up to the 5V power line).
     *   **VCC:** Wire to the stable 3V3 power rail.
     *   **GND:** Wire to the common ground grid.
-*   **For the main documentation on Computer Vision Functions and Error Rates:** [Performance Testing and Analytics documentation](/10_PTesting&Analysis.md).
+*   **For the main documentation on Computer Vision Functions and Error Rates:** [Performance Testing and Analytics documentation](docs/10_PTesting&Analysis.md).
 
 ### Steering Servo Motor
 
