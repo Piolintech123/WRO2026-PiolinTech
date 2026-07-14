@@ -1,6 +1,6 @@
 # 9. Color Signature Parsing: RGB Matrix Analysis
 
-## 9.1 Operational Mechanics (How it Works)
+## 9.1 Operational Mechanics 
 When configured for color recognition or tracking, the Huskylens bypasses complex shape-detection algorithms to prioritize structural pixel classification based on raw RGB (Red, Green, Blue) multi-channel values. 
 
 The onboard OV2640 sensor captures light waves and translates them into a digitized Bayer filtering matrix. When a specific color signature is locked during calibration, the Huskylens samples the center region to establish a baseline hardware color vector:
@@ -15,7 +15,7 @@ If the color delta ($\Delta C$) falls within our strict predefined tolerance win
 
 ---
 
-## 9.2 Strategic Rationale (Why)
+## 9.2 Strategic Rationale
 Our autonomous navigation loop depends heavily on identifying distinct color lanes and hazard structures instantly. The Huskylens’ approach to hardware-accelerated RGB parsing offers major functional advantages:
 
 *   **Immunity to Computational Bloat:** Traditional software-level RGB thresholding requires the primary computer to pull a raw frame buffer, run nested pixel extraction loops, and apply masking arrays. Offloading this math to the Huskylens means our main navigation pipeline receives clean coordinate packages instantly, keeping script execution times low.
