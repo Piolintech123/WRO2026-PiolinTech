@@ -1,6 +1,6 @@
-# 7. Huskylens AI Vision Sensor: Deep-Dive Technical Analysis
+# 3. Huskylens AI Vision Sensor: Deep-Dive Technical Analysis
 
-## 7.1 Operational Core: How It Works
+## 3.1 Operational Core: How It Works
 The Huskylens is an AI-powered vision sensor built around a dual-core RISC-V 64-bit processor (K210) running localized hardware-accelerated neural networks. Unlike traditional raw camera modules that stream uncompressed frame arrays back to a primary host controller, the Huskylens processes image data entirely on the edge.
 
 
@@ -26,7 +26,7 @@ When configured for color block tracking, the hardware utilizes specialized conv
 
 ---
 
-## 7.2 Strategic Rationale: Why It Was Selected
+## 3.2 Strategic Rationale: Why It Was Selected
 The migration to Huskylens was driven by critical hardware bottlenecks observed during extensive operational tests with our legacy vision tracking systems:
 
 ### Baseline System Comparison
@@ -46,7 +46,7 @@ The migration to Huskylens was driven by critical hardware bottlenecks observed 
 
 ---
 
-## 7.3 Kinematic Optimization: Geometric Placement and Influence
+## 3.3 Kinematic Optimization: Geometric Placement and Influence
 The physical mounting profile of the Huskylens is heavily optimized to balance field-of-view limits with physical protection requirements:
 
 *   **Fixed Spatial Height:** Mounted securely at an absolute vertical clearance of **9.5 cm** from the track surface.
@@ -67,4 +67,4 @@ Huskylens Module
 ### Direct System Influence:
 *   **Glare Deflection:** The 15-degree downward angle creates a physical parallax shield against overhead track lights, bouncing indirect reflections away from the physical lens element to secure a high signal-to-noise ratio.
 *   **PID Loop Stability:** Providing continuous, low-latency coordinate packages allows our primary steering thread to calculate proportional-integral-derivative (PID) tracking adjustments without data gaps. 
-*   **Precision Evasion Reliability:** Because tracking errors are held tightly **below 3%**, the navigation system registers obstacles instantly. This clean data flow minimizes steering oscillations and guarantees reliable, high-velocity lane alignment through complex track sweeps. *(For a complete statistical breakdown of these vision error rates under varying track conditions and how we calculated them, please refer to our [Performance Testing and Analytics documentation](./10_PTesting&Analysis.md)).*
+*   **Precision Evasion Reliability:** Because tracking errors are held tightly **below 3%**, the navigation system registers obstacles instantly. This clean data flow minimizes steering oscillations and guarantees reliable, high-velocity lane alignment through complex track sweeps. *(For a complete statistical breakdown of these vision error rates under varying track conditions and how we calculated them, please refer to our [Performance Testing and Analytics documentation](./PTesting&Analysis.md)).*
