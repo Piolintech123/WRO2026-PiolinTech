@@ -39,13 +39,11 @@ The triple-staggered ultrasonic array was benchmarked against calibrated hardwar
 
 ```
 
-```
               [Left Sensor]       [Center Sensor]      [Right Sensor]
                  (GPIO15)            (GPIO17)             (GPIO23)
                     ╲                   │                    ╱
                      ╲                  │                   ╱
 
-```
 
 180° Coverage Sweep:    ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
