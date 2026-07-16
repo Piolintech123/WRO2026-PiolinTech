@@ -4,7 +4,7 @@ Developed and optimized specifically for our first regional competition, this in
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/1c69496e-6b70-4709-8284-e27ac4f175b2" alt="Prototype Phase 1.5" width="450"/>
-  <p><em>Figure 1.2: Prototype Phase 1.5 featuring reinforced dual-layer structural bracing, a multi-sensor front bumper, and manually secured cable connections.</em></p>
+  <p><em>Prototype Phase 1.5 featuring reinforced dual-layer structural bracing, a multi-sensor front bumper, and manually secured cable connections.</em></p>
 </div>
 
 ### 1.2.1 Architectural Specifications and Upgrades
