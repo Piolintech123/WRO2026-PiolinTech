@@ -54,7 +54,7 @@ The following table summarizes the primary pin assignments for all the component
     *   **SCL:** Wire to GPIO3 (and pulled up to the 5V power line).
     *   **VCC:** Wire to the stable 3V3 power rail.
     *   **GND:** Wire to the common ground grid.
-*   **For the main documentation on Computer Vision Functions and Error Rates:** [Performance Testing and Analytics documentation](./10_PTesting&Analysis.md).
+*   **For the main documentation on Computer Vision Functions and Error Rates:** [Performance Testing and Analytics documentation](./PTesting&Analysis.md).
 
 ### Steering Servo Motor
 
