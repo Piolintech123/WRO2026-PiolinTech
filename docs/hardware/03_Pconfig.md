@@ -1,4 +1,4 @@
-# 4.0 Overview of Pin Configuration
+# 3.0 Overview of Pin Configuration
 
 
 The following table summarizes the primary pin assignments for all the components on the Raspberry Pi 5:
@@ -15,7 +15,7 @@ The following table summarizes the primary pin assignments for all the component
 
 ---
 
-## 4.1 Sensor Information and Pin Configuration
+## 3.1 Sensor Information and Pin Configuration
 
 ### Ultrasonic Sensors (HC-SR04)
 
