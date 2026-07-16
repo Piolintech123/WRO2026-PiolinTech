@@ -1,7 +1,4 @@
 # 10. Performance Testing and Analytics
-
-This document details the quantitative testing methodologies, experimental data, and statistical analysis used to validate our robot's sensor arrays, vision processing subsystem, and closed-loop kinematic control loops.
-
 ---
 
 ## 10.1 Vision Subsystem Statistical Validation
