@@ -171,14 +171,13 @@ When the center-facing ultrasonic sensor reports a distance below 25cm, a softwa
 
 ### Vehicle Photos
 
-Physical reference orthogonal views are located in the /v-photos directory:
+Physical reference orthogonal views are located in the [Vehicle Images](./v-photos) directory:
 
-* **[Front Perspective](./v-photos/Ptech_Front.png)**
-* **[Back Perspective](./v-photos/Ptech_Back.png)**
-* **[Left Perspective](./v-photos/Ptech_Left.png)**
-* **[Right Perspective](./v-photos/Ptech_Right.png)**
-* **[Top View](./v-photos/Ptech_Top.png)**
-* **[Bottom View](./v-photos/Ptech_Down.png)**
+| Front View | Back View | Left View |
+| :---: | :---: | :---: |
+| <img src="./v-photos/Ptech_Front.png" width="300"> | <img src="./v-photos/Ptech_Back.png" width="300"> | <img src="./v-photos/Ptech_Left.png" width="300"> |
+| **Right View** | **Top View** | **Bottom View** |
+| <img src="./v-photos/Ptech_Right.png" width="300"> | <img src="./v-photos/Ptech_Top.png" width="300"> | <img src="./v-photos/Ptech_Down.png" width="300"> |
 
 ### Team Photos
 
