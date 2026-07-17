@@ -360,7 +360,7 @@ To mitigate the processor jitter ($t_{\text{jitter}}$) inherent in single-thread
 ---
 ### Communication Protocol & Inter-Process Architecture
 
-To achieve deterministic real-time performance, Piolín utilizes a distributed processing model. The High-Level Processor (Raspberry Pi 5) handles computationally intensive tasks—such as AI-driven edge computer vision and trajectory planning—while the Low-Level Controller (Arduino Nano) operates as a dedicated I/O interface for motor and sensor hardware.
+To achieve deterministic real-time performance, Piolín utilizes a distributed processing model. The High-Level Processor (Raspberry Pi 5) handles computationally intensive tasks such as AI-driven edge computer vision and trajectory planning while the Low-Level Controller operates as a dedicated I/O interface for motor and sensor hardware.
 
 * **Protocol Specification:** Full-Duplex Serial UART (Universal Asynchronous Receiver-Transmitter).
 * **Clock Synchronization:** Baud rate fixed at **115200 bps** to maintain high-frequency throughput while minimizing potential bit-error rates over the shared physical bus.
