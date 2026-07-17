@@ -77,7 +77,8 @@ Where the tracking error is defined as:
 $$e(t) = X_{\text{target}} - X_{\text{measured}}$$
 
 ### Loop Optimization Impact
-*   **Hardware PWM Channel Allocation:** By migrating the steering servo signal out of software timing maps and anchoring it to the Pi 5's internal `PWM0` hardware clock channel (GPIO 15), data propagation latency dropped from $18\text{ ms}$ to less than $1.2\text{ ms}$.
-*   **Transient Response Performance:** The hardware clock assignment completely decoupled steering updates from heavy multi-threaded CPU overhead. This modification keeps our steering loop exceptionally stable, suppressing transient overshoot and damping oscillation cycles down to zero within $220\text{ ms}$ during aggressive lane recovery maneuvers.
+The migration of the steering servo signal away from software-based timing maps to the Raspberry Pi 5’s dedicated `PWM0` hardware clock channel (GPIO 15) represents a critical advancement in our system’s deterministic performance. By anchoring the signal directly to the internal hardware clock, we have successfully eliminated the overhead associated with software-defined timing, resulting in a dramatic reduction in data propagation latency from an initial $18\text{ ms}$ down to a refined $1.2\text{ ms}$.
 
----
+This hardware-level assignment effectively decouples the steering actuation from the heavy multi-threaded CPU load inherent in our image processing pipeline. By removing the dependency on fluctuating software cycles, the steering loop maintains a level of precision that was previously unattainable, ensuring that the actuator receives consistent, high-fidelity signals regardless of the intensity of the concurrent computational tasks being performed by the central processor.
+
+The cumulative result of these modifications is an exceptionally stable steering response that demonstrates superior damping characteristics. Our empirical testing shows that this architectural shift successfully suppresses transient overshoot, allowing the vehicle to damp all oscillation cycles to zero within $220\text{ ms}$ during aggressive lane recovery maneuvers. This ensures that the robot maintains its trajectory integrity even under the most demanding dynamic conditions on the competition track.
