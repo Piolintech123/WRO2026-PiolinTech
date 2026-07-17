@@ -67,7 +67,7 @@ Our primary objective is to develop an elegant, highly reproducible autonomous v
 
 ---
 
-## 1. Dimension Table
+## Dimension Table
 
 The following table outlines the key physical and mechanical dimensions of Piolín, strictly adhering to the WRO Future Engineers regulations:
 
@@ -84,7 +84,7 @@ The following table outlines the key physical and mechanical dimensions of Piol�
 
 ---
 
-## 2. Feature Table
+## Feature Table
 
 Our hardware selection is strategically divided to separate real-time sensory-actuator tasks from heavy mathematical processing:
 
@@ -100,7 +100,7 @@ Our hardware selection is strategically divided to separate real-time sensory-ac
 
 ---
 
-## 4. Structural Evolution (v1, v2, & v3)
+## Structural Evolution (v1, v2, & v3)
 
 The mechanical architecture of our robot transitioned through three distinct phases to resolve physical weaknesses under live track conditions:
 
@@ -113,7 +113,7 @@ The current active configuration implements a hybrid structural paradigm. We pre
 
 ---
 
-## 5. Logic (Flowchart Logic)
+## Logic (Flowchart Logic)
 
 ### Multi-Threaded Software Architecture
 
@@ -173,18 +173,217 @@ When the center-facing ultrasonic sensor reports a distance below 25cm, a softwa
 
 Physical reference orthogonal views are located in the [Vehicle Images](./v-photos) directory:
 
+**PARTIALLY LEGO**
 | Front View | Back View | Left View |
 | :---: | :---: | :---: |
 | <img src="./v-photos/Ptech_Front.png" width="300"> | <img src="./v-photos/Ptech_Back.png" width="300"> | <img src="./v-photos/Ptech_Left.png" width="300"> |
 | **Right View** | **Top View** | **Bottom View** |
 | <img src="./v-photos/Ptech_Right.png" width="300"> | <img src="./v-photos/Ptech_Top.png" width="300"> | <img src="./v-photos/Ptech_Down.png" width="300"> |
 
+**COMPLETE LEGO**
+| **Top (Superior)** | **Front (Frontal)** | **Left (Izquierda)** |
+| :---: | :---: | :---: |
+| <img width="300" alt="Top View" src="https://github.com/user-attachments/assets/74e4f686-9589-420e-8f6c-983e1a564d8d" /> | <img width="300" alt="Front View" src="https://github.com/user-attachments/assets/a98c4f04-ae21-40e8-a16d-bbda9ea81a09" /> | <img width="300" alt="Left View" src="https://github.com/user-attachments/assets/dfc9a0a5-5dbb-4c47-a0b5-acfcf0a3b368" /> |
+| **Bottom (Inferior)** | **Back (Trasera)** | **Right (Derecha)** |
+| <img width="300" alt="Bottom View" src="https://github.com/user-attachments/assets/67425bf3-6790-44ff-a507-e0062d2bbd27" /> | <img width="300" alt="Back View" src="https://github.com/user-attachments/assets/e759142e-90c6-4ca1-a956-842665266fd7" /> | <img width="300" alt="Right View" src="https://github.com/user-attachments/assets/e28bb114-7d07-4d95-b144-010c3d85a24a" /> |
 ### Team Photos
 
 Team pictures, project timelines, and development workspace documentation are located under the [Get to know us](./t-gtku) directory.
 
-### Performance Videos
 
-Video records of our open track trials and competitive speed runs are located in the [Videos](./videos) directory.
+## Performance & Demonstration Videos
+
+The following links provide official high-definition video demonstrations of **Piolín** navigating both competition profiles across the national and regionals.
+
+### 1. Open Challenge (Round 1 Strategy)
+The vehicle executes continuous-time closed-loop line tracking using a discrete PID algorithm, completing the required 3-lap run with optimized corner trajectories.
+
+* **Open Challenge Video — Test Video:** > [Watch the Demonstration on YouTube](https://youtu.be/haeQVoR9_ko)
+---
+
+### 2. Obstacle Challenge (Round 2 Strategy)
+The vehicle deploys its proximity matrix, using ultrasonic sensors and camera detection to bypass red and green pillars dynamically while maintaining lane reference boundaries.
+
+COMING SOON......................
 
 
+---
+
+The Piolín platform operates on a high-modularity mechatronic framework, purposefully departing from standard LEGO Technic structural limitations to achieve deterministic mechanical response. The structural design focuses on minimizing the Moment of Inertia ($\mathcal{I}$) and ensuring the distribution of structural loads across the chassis assembly.
+
+### Center of Mass (CoM) Optimization
+
+The structural frame incorporates an optimized topology where the primary controller (LEGO EV3 Intelligent Brick or Raspberry Pi 5) is embedded at the lowest possible geometric boundary relative to the drive axle line. This configuration minimizes the Center of Mass height ($Z_{\text{CoM}}$), thereby reducing lateral load transfer and mitigating body-roll moments ($\mathcal{M}_{\text{roll}}$) during transient high-velocity cornering maneuvers.
+
+### Ackermann Kinematics & Steering Linkage
+
+To eliminate tire scrubbing and kinematic slippage, the steering mechanism utilizes an Ackermann Geometry Linkage, ensuring a single, stable instantaneous center of rotation (ICR) for any steering angle ($\delta$). The kinematic relationship is defined by:
+
+
+$$\cot(\delta_{\text{outer}}) - \cot(\delta_{\text{inner}}) = \frac{w}{l}$$
+
+
+Where:
+
+* $w$: Vehicle track width.
+
+
+* $l$: Wheelbase length between front and rear axles.
+
+
+
+### Powertrain & Gearbox Efficiency
+
+The propulsion system utilizes custom-fabricated involute bevel gears. These gears were engineered with the following specifications:
+
+* **Geometry:** Mathematically derived involute profiles to minimize mechanical backlash and eliminate phase delays in acceleration loops.
+
+
+* **Manufacturing:** Fabricated via Fused Deposition Modeling (FDM) using Polylactic Acid (PLA) polymer with a 60% gyroid infill pattern, ensuring a high shear modulus.
+
+
+* **Efficiency:** The 1:1 torque-matching efficiency profile is delivered directly to independent rear half-shafts, guaranteeing near-zero-slip power transmission.
+
+
+
+## Dynamic Modeling & Longitudinal Torque Analysis
+
+To validate the powertrain's capability, we performed a longitudinal dynamic analysis using the empirical physical properties of the platform.
+
+### Tractive Effort ($F_t$)
+
+The net force required to achieve the target acceleration ($a = 0.50\,\text{m/s}^2$) for a total mass ($m = 0.72141\,\text{kg}$) is calculated as:
+
+
+$$F_t = (m \cdot a) + (C_{rr} \cdot m \cdot g)$$
+
+
+Using $C_{rr} = 0.02$ (rolling resistance coefficient for industrial vinyl) and $g = 9.81\,\text{m/s}^2$:
+
+
+$$F_t = (0.72141 \cdot 0.50) + (0.02 \cdot 0.72141 \cdot 9.81) = 0.3607\,\text{N} + 0.1415\,\text{N} = 0.5022\,\text{N}$$
+
+### Axle Torque ($\tau_{\text{req}}$)
+
+For a rear drive wheel radius of $r_{\text{rear}} = 0.02809\,\text{m}$, the required torque at the axle is:
+
+
+$$\tau_{\text{req}} = F_t \cdot r_{\text{rear}} = 0.5022\,\text{N} \cdot 0.02809\,\text{m} = \mathbf{0.01411\,\text{N}\cdot\text{m}}$$
+
+### Factor of Safety ($FS$)
+
+For a propulsion actuator with stall torque $\tau_{\text{stall}} = 0.25\,\text{N}\cdot\text{m}$:
+
+
+$$FS = \frac{\tau_{\text{stall}}}{\tau_{\text{req}}} = \frac{0.25\,\text{N}\cdot\text{m}}{0.01411\,\text{N}\cdot\text{m}} \approx \mathbf{17.71}$$
+
+
+An $FS$ of $17.71$ provides substantial torque headroom, preventing thermal saturation within motor coils and allowing for high-bandwidth velocity control.
+
+### Power Distribution Table
+
+The following table details the estimated current consumption across the primary subsystems to ensure the selection of a suitable power regulation module.
+
+| Component | Operating Voltage (V) | Avg. Current (A) | Peak Current (A) |
+| :--- | :---: | :---: | :---: |
+| Raspberry Pi 5 | 5.0 | 0.8 | 1.5 |
+| Arduino Nano | 5.0 | 0.05 | 0.1 |
+| DC Motors (x2) | 7.4 | 0.4 | 1.2 |
+| Digital Steering Servo | 5.0 | 0.2 | 0.6 |
+| **Total** | -- | **1.45 A** | **3.40 A** |
+
+Regarding our power dynamic throughout the robot, a robust autonomous system requires fault-handling to prevent hardware damage during track edge cases.
+
+| Risk Factor | Mitigation Strategy | Failure Response |
+| :--- | :--- | :--- |
+| **Voltage Drop** | 1000uF Electrolytic Capacitor | Voltage bus stabilization during motor stall. |
+| **Process Hang** | Hardware Watchdog Timer | Automatic MCU reset on software lock-up. |
+| **Collision Risk** | Ultrasonic Proximity Interlock | Emergency Stop (E-Stop) triggered at d < 5cm. |
+
+## Control Theory & Software Logic
+
+The software employs an asynchronous, non-blocking Python framework to handle high-frequency sensor polling and PID regulation.
+
+```mermaid
+graph LR
+    subgraph Power_Management
+    BAT[Li-Po 7.4V] --> VR[Buck Converter 5V/3A]
+    VR --> RPi[Raspberry Pi 5]
+    VR --> MCU[Microcontroller]
+    end
+    subgraph Sensing
+    US[3x Ultrasonic] --> MCU
+    CAM[HuskyLens] --> RPi
+    end
+    subgraph Actuation
+    MCU --> SERV[Steering Servo]
+    MCU --> MOT[DC Motors via H-Bridge]
+    end
+```
+### PID Control Law
+
+The steering correction ($u(t)$) is calculated via a discrete-time PID algorithm:
+
+
+$$u(t) = K_p \, e(t) + K_i \int e(t)dt + K_d \, \frac{de(t)}{dt}$$
+
+### System Architecture State Machine
+
+```mermaid
+graph TD
+    A("System Boot") --> B("Sensor Calibration")
+    B --> C("Closed-Loop PID Lane Tracking")
+    C --> D("Sensory Registry Polling")
+    D --> E("PID Control Law Execution")
+    E --> F{"Proximity Interrupt"}
+    F -- NO --> C
+    F -- YES --> G("Obstacle Routing Matrix")
+    G --> H{"Color Classification"}
+    H -- Red Pillar --> I("PID Baseline Offset Left")
+    H -- Green Pillar --> J("PID Baseline Offset Right")
+    I --> C
+    J --> C
+
+```
+
+## Engineering Roadmap
+
+To mitigate the processor jitter ($t_{\text{jitter}}$) inherent in single-threaded systems and stabilize the power bus against voltage dips ($V_{\text{drop}}$), the current design is transitioning to a distributed architecture:
+
+* **High-Level Processing:** Integration of Raspberry Pi 5 for AI-driven computer vision and Kalman-filtered sensor fusion (fusing Ultrasonic and ToF telemetry).
+
+
+* **Low-Level Actuation:** RTOS-based microcontrollers handling deterministic PWM generation and motor PID control, isolated via an I2C/UART serial bus to maintain absolute loop frequency.
+
+
+
+---
+### Communication Protocol & Inter-Process Architecture
+
+To achieve deterministic real-time performance, Piolín utilizes a distributed processing model. The High-Level Processor (Raspberry Pi 5) handles computationally intensive tasks—such as AI-driven edge computer vision and trajectory planning—while the Low-Level Controller (Arduino Nano) operates as a dedicated I/O interface for motor and sensor hardware.
+
+* **Protocol Specification:** Full-Duplex Serial UART (Universal Asynchronous Receiver-Transmitter).
+* **Clock Synchronization:** Baud rate fixed at **115200 bps** to maintain high-frequency throughput while minimizing potential bit-error rates over the shared physical bus.
+* **Packet Structure:** A fixed-length, 6-byte packed structure for deterministic parsing:
+    * `[Byte 0: Start Header (0xAA)]`
+    * `[Byte 1: Steering_Angle (0-180°)]`
+    * `[Byte 2-3: Propulsion_PWM (16-bit unsigned)]`
+    * `[Byte 4: System_State_Flag (Bitmask: 0=Idle, 1=Track, 2=Obstacle)]`
+    * `[Byte 5: Checksum (XOR parity)]`
+* **Latency Metrics:** By offloading hardware-level PWM generation to the Arduino Nano, we have achieved a reduction in system-wide actuation latency, ensuring a command-to-actuator response time of **< 2ms**.
+
+### Strategic Engineering Roadmap (Technical Improvements)
+
+The following development phases outline the iterative evolution of the Piolín platform, focusing on enhancing system reliability and navigational precision:
+
+* **Multisensor Data Fusion (Kalman Filter Integration):**
+  The current ultrasonic-only approach is prone to acoustic reflection interference on non-linear surfaces. We are currently implementing a **1D Kalman Filter** within the Raspberry Pi’s middleware to fuse telemetry from the three existing ultrasonic transducers with four additional ToF400C laser ranging sensors. This fusion will generate a high-confidence spatial state estimate, effectively eliminating transient noise in the proximity error calculation (t).
+
+* **Advanced Computer Vision Migration:**
+  While the HuskyLens 2 provides rapid color-signature classification, it lacks the flexibility for complex structural environment parsing. Our roadmap includes transitioning the image processing pipeline to a **Python/OpenCV framework** running directly on the Raspberry Pi 5. By leveraging the Pi 5's dedicated CSI-2 camera interface, we will implement **Canny Edge Detection** and **Hough Transform-based line tracking**. This upgrade will significantly improve lane-following robustness under high-contrast environmental light variations and non-standard track conditions.
+
+* **Dynamic Chassis & Suspension Engineering:**
+  Preliminary stress analysis indicates that high-velocity maneuvers induce significant vibrations, which degrade sensor telemetry accuracy. We are currently prototyping an **independent wishbone suspension system** utilizing micro-coils. This structural upgrade will ensure that the wheel-to-track contact patch remains uniform, reducing tire slippage and improving the mechanical grip during aggressive directional changes in the Obstacle Challenge.
+
+* **Autonomous Self-Calibration Routine:**
+  To minimize pit-lane setup time, we are developing an automated calibration firmware. Upon initialization, the robot will perform a 360° sensor-sweep to define the track's boundary mean and establish the lighting bias of the current venue, allowing the PID gains ($K_p, K_i, K_d$) to adjust autonomously without manual code-level intervention.
