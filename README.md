@@ -176,9 +176,9 @@ Physical reference orthogonal views are located in the [Vehicle Images](./v-phot
 **PARTIALLY LEGO**
 | Front View | Back View | Left View |
 | :---: | :---: | :---: |
-| <img src="./v-photos/Ptech_Front.png" width="300"> | <img src="./v-photos/Ptech_Back.png" width="300"> | <img src="./v-photos/Ptech_Left.png" width="300"> |
+| <img src="./v-photos/v2/Ptech_Front.png" width="300"> | <img src="./v-photos/v2/Ptech_Back.png" width="300"> | <img src="./v-photos/v2/Ptech_Left.png" width="300"> |
 | **Right View** | **Top View** | **Bottom View** |
-| <img src="./v-photos/Ptech_Right.png" width="300"> | <img src="./v-photos/Ptech_Top.png" width="300"> | <img src="./v-photos/Ptech_Down.png" width="300"> |
+| <img src="./v-photos/v2/Ptech_Right.png" width="300"> | <img src="./v-photos/v2/Ptech_Top.png" width="300"> | <img src="./v-photos/v2/Ptech_Down.png" width="300"> |
 
 **COMPLETE LEGO**
 | **Top (Superior)** | **Front (Frontal)** | **Left (Izquierda)** |
