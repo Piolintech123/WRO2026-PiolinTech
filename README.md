@@ -317,8 +317,7 @@ graph LR
 ```
 ### PID Control Law
 
-The steering correction ($u(t)$) is calculated via a discrete-time PID algorithm:
-
+The steering correction $u(t)$ is calculated via a discrete-time PID algorithm: $u(t) = K_p \, e(t) + K_i \int e(t)dt + K_d \, \frac{de(t)}{dt}$. This control law functions as the central "brain" of the Piolín platform, translating raw sensory telemetry into refined, continuous steering commands by moving away from binary, erratic logic toward a sophisticated, predictive model that allows for smooth, stable navigation across the dynamic environments of the WRO competition track. The Proportional term, $K_p \, e(t)$, acts as the immediate reactive force, generating a steering correction proportional to the current error detected between the left and right ultrasonic sensors, while the Integral term, $K_i \int e(t)dt$, monitors cumulative past error to systematically eliminate steady-state biases—such as mechanical misalignments—that would otherwise prevent the vehicle from achieving sustained centering. Complementing these, the Derivative term, $K_d \, \frac{de(t)}{dt}$, serves as the critical predictive element by calculating the rate of change of the error to act as a mechanical damper, applying a counter-force to dampen steering input as the error nears zero and effectively preventing the vehicle from oscillating past the target trajectory. Ultimately, we utilize this PID approach because it provides the level of deterministic stability required for industrial-grade robotics, allowing us to filter out noisy ultrasonic data and tune the vehicle’s responsiveness precisely to achieve the perfect balance between aggressive cornering and high-speed straight-line precision.
 
 $$u(t) = K_p \, e(t) + K_i \int e(t)dt + K_d \, \frac{de(t)}{dt}$$
 
