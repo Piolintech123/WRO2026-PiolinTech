@@ -234,16 +234,11 @@ Where:
 
 ### Powertrain & Gearbox Efficiency
 
-The propulsion system utilizes custom-fabricated involute bevel gears. These gears were engineered with the following specifications:
+The propulsion system of the Piolín platform is driven by custom-fabricated involute bevel gears, engineered specifically to surpass the limitations of commercial structural components. By utilizing mathematically derived involute profiles, the gear mesh geometry is optimized to minimize mechanical backlash. This precision in tooth engagement is critical for maintaining high-frequency control, effectively eliminating phase delays in the acceleration loops and ensuring that every input signal results in an immediate, deterministic mechanical response.
 
-* **Geometry:** Mathematically derived involute profiles to minimize mechanical backlash and eliminate phase delays in acceleration loops.
+In terms of manufacturing, these components are produced via Fused Deposition Modeling (FDM) using high-grade Polylactic Acid (PLA) polymer. To balance weight requirements with the necessary structural integrity, we employed a 60% gyroid infill pattern. This specific internal architecture was selected to provide an isotropic stress distribution, resulting in a high shear modulus that allows the gears to withstand the significant torsional loads encountered during rapid acceleration without material deformation.
 
-
-* **Manufacturing:** Fabricated via Fused Deposition Modeling (FDM) using Polylactic Acid (PLA) polymer with a 60% gyroid infill pattern, ensuring a high shear modulus.
-
-
-* **Efficiency:** The 1:1 torque-matching efficiency profile is delivered directly to independent rear half-shafts, guaranteeing near-zero-slip power transmission.
-
+The final integration of this powertrain ensures a 1:1 torque-matching efficiency profile, which is delivered directly to the vehicle’s independent rear half-shafts. This optimized transmission path guarantees near-zero-slip power delivery, maximizing the efficiency of the traction system. By maintaining such high mechanical consistency from the motor output to the wheel interface, we achieve the precise torque distribution required for stable, high-speed navigation across varying track surfaces.
 
 
 ## Dynamic Modeling & Longitudinal Torque Analysis
