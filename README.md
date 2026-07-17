@@ -91,7 +91,7 @@ Our hardware selection is strategically divided to separate real-time sensory-ac
 | System | Component | Primary Feature / Technical Specification |
 | --- | --- | --- |
 | **High-Level Processor** | **Raspberry Pi 5** | 2.4 GHz Quad-Core ARM Cortex-A76. Runs camera image parsing, PID calculations, and state machines. |
-| **Low-Level Microcontroller** | **Arduino Nano** | ATmega328P. Handles instant hardware PWM generation for steering and millisecond sensor interrupts. |
+| **Low-Level Microcontroller** | **Microcontroller** | ATmega328P. Handles instant hardware PWM generation for steering and millisecond sensor interrupts. |
 | **Computer Vision Engine** | **HuskyLens 2** | AI-driven camera connected via hardware I2C; localizes color pillars on the fly. |
 | **Distance Telemetry** | **HC-SR04 (x3)** | Active ultrasonic transducers angled at 30 degrees to sense diagonal walls predicted ahead. |
 | **Propulsion Power** | **Metal-Geared DC Motors** | High-RPM micro motors providing rapid acceleration out of tight turns. |
@@ -287,7 +287,7 @@ The following table details the estimated current consumption across the primary
 | Component | Operating Voltage (V) | Avg. Current (A) | Peak Current (A) |
 | :--- | :---: | :---: | :---: |
 | Raspberry Pi 5 | 5.0 | 0.8 | 1.5 |
-| Arduino Nano | 5.0 | 0.05 | 0.1 |
+| Microcontroller | 5.0 | 0.05 | 0.1 |
 | DC Motors (x2) | 7.4 | 0.4 | 1.2 |
 | Digital Steering Servo | 5.0 | 0.2 | 0.6 |
 | **Total** | -- | **1.45 A** | **3.40 A** |
