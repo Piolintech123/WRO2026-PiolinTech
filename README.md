@@ -1,93 +1,148 @@
+<h1 align="center">⚡ Welcome to the PiolínTech Repository ⚡</h1>
 
-# WRO2026-PiolinTech
+<div align="center">
 
-<p align="center">
-Documentation for team PiolinTech's robot for WRO 2026 - Future Engineers
-</p>
-
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 <p align="center">
 <img width="823" height="477" alt="image" src="https://github.com/user-attachments/assets/812b7146-2706-4745-93e5-c2bc14222051" />
 </p>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+</div>
+
+<h3 align="center"><em>"Precision in motion, engineered for the future."</em></h3>
 
 <p align="center">
-  <a href="https://instagram.com/piolintech">
-    <img src="https://img.shields.io/badge/Instagram-@piolintech-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram Piolintech">
-  </a>
-  <a href="https://youtube.com/@piolintech">
-    <img src="https://img.shields.io/badge/YouTube-Piolín_Tech-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Piolintech">
-  </a>
+  <img src="https://img.shields.io/badge/WRO-Future_Engineers_2026-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Team-PiolínTech-red?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Panama-🇵🇦-red?style=for-the-badge">
 </p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Processor-Raspberry_Pi_5-C51A4A?style=flat-square">
+  <img src="https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square">
+  <img src="https://img.shields.io/badge/Vision-HuskyLens-orange?style=flat-square">
+  <img src="https://img.shields.io/badge/Controller-Arduino_Nano-00979D?style=flat-square">
+</p>
+
+---
 
 Welcome to the official repository for Piolín, our autonomous robotic vehicle designed and built for the World Robot Olympiad (WRO) Future Engineers competition. This repository contains the complete mechanical designs, electrical schematics, firmware files, and computer vision algorithms developed by our team. **Piolín** is an advanced autonomous robotic vehicle engineered to compete in the **WRO Future Engineers 2026** category. Running on a high-performance **Raspberry Pi 5** processing core, the robot handles real-time edge computer vision via a **Huskylens** smart camera for strict lane alignment. It fuses visual telemetry with an array of **three ultrasonic distance sensors** to navigate complex track curves, identify lane markers, and safely execute dynamic obstacle evasion.
 
+| | |
+|---|---|
+|  **Competition** | WRO Future Engineers 2026 |
+|  **Region** | Panamá, Panamá |
+|  **Controller** | Raspberry Pi 5 + Arduino Nano |
+|  **Language** | Python 3 (Asyncio) + C++ |
+|  **Vision** | HuskyLens AI Camera |
+|  **Steering** | Ackermann Geometry |
+
+---
+<h3 align="center">Check us out! 👇</h3>
+
+<p align="center">
+  <a href="https://youtube.com/@piolintech" target="_blank">
+    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube">
+  </a>
+  <a href="https://instagram.com/piolintech" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
+  </a>
+  <a href="https://github.com/PiolinTech" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+  </a>
+</p>
+
 ---
 
-## General Index
+## WRO2026_FE_PiolínTech
 
-* **[Get to know us](./t-gtku)**: Meet the team, our story, and our specific roles in development.
+## General Project Index
+
+You can use this index to navigate through our robot's documentation. Each section explains a specific part of Piolín’s design, including its mechanical structure, sensor architecture, software logic, engineering decisions, reproducibility materials, and additional resources.
+
+---
+
+## 📌 General Project Index
+
+### 1. Mobility and Mechanical Design
+* **[Outside of Piolin](./docs/hardware)**:
+    * **[Project Overview](./docs/hardware/01_POverview.md)**
+    * **[Structural Components](./docs/hardware/02_HComponents.md)**
+    * **[Robot Mobility](./docs/hardware/05_RMobility.md)**
+* **[Our Evolution](./models/evolution)**:
+    * **[Phase 1](./models/evolution/Phase1.md)**
+    * **[Phase 2](./models/evolution/Phase2.md)**
+    * **[PiolínTech V1 (Visual)](./models/evolution/PTechV1.png)**
 * **[Piolin Overall](./v-photos)**: Orthogonal and perspective photography of the physical vehicle.
-* **[Our Robot on Action](./Video)**: Video logs and live track test runs.
-* **[Important Documents](./docs)**:
-* **[Outside of Piolin](./docs/hardware)**: Hardware design, chassis specs, and mechanical calculations.
-* **[Inside of Piolin](./docs/software)**: Software logic, libraries, and communication protocols.
 
+### 2. Power and Sensor Architecture
+* **[Technical Details](./docs/schemes)**: Circuit schematics, power distribution maps, and wiring.
+* **[Sensor Configuration](./docs/hardware)**:
+    * **[Power and Sensor Config](./docs/hardware/03_PowerSensorconfig.md)**
+    * **[Ultrasonic Sensor Data](./docs/hardware/04_USSensorD.md)**
+
+### 3. Software Architecture and Obstacle Strategy
+* **[Inside of Piolin](./docs/software)**:
+    * **[Software Architecture](./docs/software/01_SWArchitecture.md)**
+    * **[General Configuration](./docs/software/02_GConfig.md)**
+    * **[HuskyLens Vision](./docs/software/03_CameraHLVision.md)**
+    * **[RGB Detection Logic](./docs/software/04_RGBdetection.md)**
+    * **[Testing & Analysis](./docs/software/PTesting&Analysis.md)**
+* **[Flowcharts and Resources](./docs/embed)**:
+    * **[Navigation State Flowchart](./docs/embed/01_NVStateFC.md)**
+    * **[Vision Processing Logic](./docs/embed/02_VProcessing.md)**
+    * **[Torque Calculation](./docs/embed/03_TorqueCalc.png)**
 * **[Our Programming](./code)**:
-* **[R1](./code/Round1)**: Source code and calibration files used in Round 1.
-* **[R2](./code/Round2)**: Optimized logic and sensor adjustments utilized in Round 2.
+    * **[R1](./code/Round1)**: Source code and calibration files used in Round 1.
+    * **[R2](./code/Round2)**: Optimized logic and sensor adjustments utilized in Round 2.
 
-* **[Our Evolution](./models)**: Detailed progression of our physical designs and prototypes.
-* **[Technical Details](./schemes)**: Circuit schematics, power distribution maps, and wiring.
-* **[Flowcharts and Important Resources](./embed)**: Core logic, state machines, and state diagrams.
+### 4. Systems Thinking and Engineering Decisions
+* **[Get to know us](./t-gtku)**: Meet the team, our story, and our specific roles in development.
+* **[Important Documents](./docs)**: Technical reports, design decision logs, and performance analysis.
+
+### 5. Reproducibility and GitHub Quality
+* **[Our Robot in Action](./videos)**: Video logs and live track test runs.
+* **[Build Guide](./docs/reproducibility/)**: Bill of materials, assembly instructions, and project reproducibility notes.
+---
+
+## 📌 Project Rundown
+
+### Piolín Goal & Structure 
+
+Piolín operates on a high-modularity mechatronic framework, purposefully departing from standard structural limitations to achieve deterministic mechanical response. The control software relies on a deterministic execution flow where Thread 1 polls sensor telemetry and Thread 2 runs the PD control loop at 100 Hz. This ensures that sensor latency does not degrade our physical actuation. Our primary objective is to develop an elegant, highly reproducible autonomous vehicle capable of completing both the Open Challenge and the Obstacle Challenge with maximum speed and reliability. By using a hybrid setup, combining the raw mechanical flexibility of the LEGO/SPIKE ecosystem with custom DC motors, microcontrollers, and a Raspberry Pi 5, we bridge the gap between educational building platforms and advanced industrial robotics.
+
+
+### Engineering Roadmap: Road to Nationals
+
+| Goal | Description |
+| :--- | :--- |
+| **Maintain Trajectory** | Achieve zero lateral sliding via refined Ackermann linkages. |
+| **Zero-Latency Sensing** | Keep detection loop latency below 15ms. |
+| **Documentation Rigor** | Build an engineering journal where every failure is explained with evidence. |
+| **Autonomous Tuning** | Develop self-calibration routines to minimize pit-lane setup time. |
 
 ---
 
-### Team Members
+<h2 align="center">Meet the Piolín Platform</h2>
 
-| Member | Information | Contact |
-| :---: | :--- | :---: |
-| <img src="https://github.com/user-attachments/assets/b11aaff5-3de3-4762-b0c1-a0094b9cf4e7" width="250" height="370" style="border-radius: 50%; object-fit: cover;"> | **Sebastián Martínez**<br>Colegio Bilingüe de Panamá | [📸 Instagram](https://www.instagram.com/sebastian.mvrl/) |
-| <img src="https://github.com/user-attachments/assets/dc507a8b-f1c1-435e-9df6-96d2e11e0cba" width="250" height="370" style="border-radius: 50%; object-fit: cover;"> | **Mia Cantoral**<br>Colegio Bilingüe de Panamá | [📸 Instagram](https://www.instagram.com/miaacnt) |
-| <img src="https://github.com/user-attachments/assets/0b5f11e1-4c58-45dd-b63a-45f6c2c5726a" width="250" height="370" style="border-radius: 50%; object-fit: cover;"> | **Christian Castrellón**<br>Colegio Bilingüe de Panamá | [📸 Instagram](https://www.instagram.com/cj.chriss) |
-| **Coach** | **Hanna Figueroa**<br>Thank you teacher Hanna for being our brightest and biggest inspiration out there. We truly admire and love you! :) | |
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/812b7146-2706-4745-93e5-c2bc14222051" alt="Piolín v3" width="85%">
+</p>
 
----
-
-## Goal & Structure
-
-### Our Vision
-
-Our primary objective is to develop an elegant, highly reproducible autonomous vehicle capable of completing both the Open Challenge and the Obstacle Challenge with maximum speed and reliability. By using a hybrid setup, combining the raw mechanical flexibility of the LEGO/SPIKE ecosystem with custom DC motors, microcontrollers, and a Raspberry Pi 5, we bridge the gap between educational building platforms and advanced industrial robotics.
-
-### Team Goals 
-
-* **Maintain Trajectory Precision**: Achieve zero lateral sliding during turns by refining our physical Ackermann implementation and steering PID loops.
-* **Zero-Latency Obstacle Detection**: Maximize edge processing speeds with the Raspberry Pi 5 and HuskyLens 2, keeping detection loop latency below 15ms.
-* **Mechanical Modularity**: Ensure that any structural, sensor, or cabling component can be swapped out in under 2 minutes during pit lane runs.
-* **Flawless Execution at Nationals**: Deliver consistent, collision-free runs under varying light conditions and surface frictions.
-
----
-
-## Dimension Table
-
-The following table outlines the key physical and mechanical dimensions of Piolín, strictly adhering to the WRO Future Engineers regulations:
-
+### 1. Dimension Table
 | Technical Parameter | Specification Value | Engineering Notes / WRO Rules |
 | --- | --- | --- |
 | **Total Length** | 170 mm | Well within the maximum 250 mm limit. |
 | **Total Width** | 140 mm | Calculated track width edge to edge of tires. |
 | **Total Height** | 120 mm | Lowered center of gravity profile. |
-| **Wheelbase ($L$)** | 165 mm | Measured pivot to pivot distance for Ackermann calculations. |
-| **Track Width ($W$)** | 140 mm | Center to center lateral tire spacing. |
+| **Wheelbase (L)** | 165 mm | Measured pivot to pivot distance for Ackermann calculations. |
+| **Track Width (W)** | 140 mm | Center to center lateral tire spacing. |
 | **Rear Tires (Propulsion)** | 56.18 mm (Diameter) | High-grip LEGO SPIKE Blue rubber wheels. |
 | **Front Tires (Steering)** | 42.8 mm (Diameter) | Low-friction guide wheels for effortless steering pivot. |
 | **Total Vehicle Mass** | 721.41 g | Mass optimized to reduce momentum during sudden turns. |
 
----
-
-## Feature Table
-
-Our hardware selection is strategically divided to separate real-time sensory-actuator tasks from heavy mathematical processing:
-
+### 2. Feature Table
 | System | Component | Primary Feature / Technical Specification |
 | --- | --- | --- |
 | **High-Level Processor** | **Raspberry Pi 5** | 2.4 GHz Quad-Core ARM Cortex-A76. Runs camera image parsing, PID calculations, and state machines. |
@@ -97,6 +152,14 @@ Our hardware selection is strategically divided to separate real-time sensory-ac
 | **Propulsion Power** | **Metal-Geared DC Motors** | High-RPM micro motors providing rapid acceleration out of tight turns. |
 | **Steering Precision** | **Micro Metal Servo** | Digital high-torque feedback actuator driving the steering rack without backlash. |
 | **Power Protection** | **Voltage Dividers** | 1 kOhm and 2 kOhm resistor pairs stepping Echo signals down from 5V to a safe 3.3V. |
+
+
+---
+
+### 3. Engineering Achievements
+*   **Hardware PWM Allocation:** By anchoring the steering signal to the Pi 5's `PWM0` hardware clock, we reduced latency from 18ms to 1.2ms.
+*   **Transient Response:** Architecture decoupling suppressed oscillation cycles, allowing the robot to recover stable trajectories within 220ms.
+*   **Involute Gearbox:** Custom FDM-printed gears provide a 1:1 torque match with near-zero-slip power transmission.
 
 ---
 
@@ -111,13 +174,11 @@ To address chassis flex, the frame was rebuilt using cross-braced white and grey
 3. **Version 3 (Current Hybrid Configuration)**:
 The current active configuration implements a hybrid structural paradigm. We preserved the rigid SPIKE Prime box-frame structure for compliance and modularity, but replaced the heavy EV3 brick and LEGO motors with a Raspberry Pi 5, an Arduino Nano, and micro metal-geared DC motors. By soldering standard pin connectors and mounting the side ultrasonic sensors at a 30-degree forward-facing angle, we achieved stable telemetry, predictive wall sensing, and a lower overall center of gravity.
 
+
 ---
 
-## Logic (Flowchart Logic)
-
-### Multi-Threaded Software Architecture
-
-The control software relies on a deterministic execution flow designed to prevent sensor polling delays from lagging our physical actuation. Thread 1 constantly queries the three HC-SR04 sensors and the HuskyLens 2 camera over I2C to write raw telemetry to a shared memory block. Thread 2 reads these clean values at a constant execution speed of 100 Hz to update the steering and propulsion states.
+### 4. Logic & Flowchart
+The control system operates via an asynchronous, non-blocking Python framework. Sensor registry polling provides raw input to our state machine, which dynamically branches between standard PD line tracking and the obstacle routing matrix when objects are detected. The control software relies on a deterministic execution flow designed to prevent sensor polling delays from lagging our physical actuation. Thread 1 constantly queries the three HC-SR04 sensors and the HuskyLens 2 camera over I2C to write raw telemetry to a shared memory block. Thread 2 reads these clean values at a constant execution speed of 100 Hz to update the steering and propulsion states.
 
 
 
@@ -144,9 +205,6 @@ The control software relies on a deterministic execution flow designed to preven
 (Execute Dodge Maneuver)         [Adjust Servo Direction]
 
 ```
-
-### Proportional-Derivative (PD) Control Loop
-
 When navigating clear stretches of the track, the vehicle maintains central lane positioning using a PD wall-following algorithm. The system continuously evaluates the difference between the left and right ultrasonic distance sweeps to compute an instantaneous corrective error:
 
 $$e(t) = \text{Dist}_{\text{left}} - \text{Dist}_{\text{right}}$$
@@ -167,8 +225,6 @@ When the center-facing ultrasonic sensor reports a distance below 25cm, a softwa
 
 ---
 
-## Media & Resources
-
 ### Vehicle Photos
 
 Physical reference orthogonal views are located in the [Vehicle Images](./v-photos) directory:
@@ -186,10 +242,19 @@ Physical reference orthogonal views are located in the [Vehicle Images](./v-phot
 | <img width="300" alt="Top View" src="https://github.com/user-attachments/assets/74e4f686-9589-420e-8f6c-983e1a564d8d" /> | <img width="300" alt="Front View" src="https://github.com/user-attachments/assets/a98c4f04-ae21-40e8-a16d-bbda9ea81a09" /> | <img width="300" alt="Left View" src="https://github.com/user-attachments/assets/dfc9a0a5-5dbb-4c47-a0b5-acfcf0a3b368" /> |
 | **Bottom (Inferior)** | **Back (Trasera)** | **Right (Derecha)** |
 | <img width="300" alt="Bottom View" src="https://github.com/user-attachments/assets/67425bf3-6790-44ff-a507-e0062d2bbd27" /> | <img width="300" alt="Back View" src="https://github.com/user-attachments/assets/e759142e-90c6-4ca1-a956-842665266fd7" /> | <img width="300" alt="Right View" src="https://github.com/user-attachments/assets/e28bb114-7d07-4d95-b144-010c3d85a24a" /> |
-### Team Photos
 
-Team pictures, project timelines, and development workspace documentation are located under the [Get to know us](./t-gtku) directory.
+---
 
+## Meet the Team
+
+We are **PiolínTech**, a robotics team from Colegio Bilingüe de Panamá. We are committed to pushing the boundaries of autonomous navigation through rigorous engineering and continuous iterative development.
+
+| Member | Information | Contact |
+| :---: | :--- | :---: |
+| <img src="https://github.com/user-attachments/assets/b11aaff5-3de3-4762-b0c1-a0094b9cf4e7" width="250" height="370" style="border-radius: 50%; object-fit: cover;"> | **Sebastián Martínez**<br>Colegio Bilingüe de Panamá | [📸 Instagram](https://www.instagram.com/sebastian.mvrl/) |
+| <img src="https://github.com/user-attachments/assets/dc507a8b-f1c1-435e-9df6-96d2e11e0cba" width="250" height="370" style="border-radius: 50%; object-fit: cover;"> | **Mia Cantoral**<br>Colegio Bilingüe de Panamá | [📸 Instagram](https://www.instagram.com/miaacnt) |
+| <img src="https://github.com/user-attachments/assets/0b5f11e1-4c58-45dd-b63a-45f6c2c5726a" width="250" height="370" style="border-radius: 50%; object-fit: cover;"> | **Christian Castrellón**<br>Colegio Bilingüe de Panamá | [📸 Instagram](https://www.instagram.com/cj.chriss) |
+| **Coach** | **Hanna Figueroa**<br>Thank you teacher Hanna for being our brightest and biggest inspiration out there. We truly admire and love you! :) | |
 
 ## Performance & Demonstration Videos
 
@@ -208,7 +273,6 @@ COMING SOON......................
 
 
 ---
-
 The Piolín platform operates on a high-modularity mechatronic framework, purposefully departing from standard LEGO Technic structural limitations to achieve deterministic mechanical response. The structural design focuses on minimizing the Moment of Inertia ($\mathcal{I}$) and ensuring the distribution of structural loads across the chassis assembly.
 
 ### Center of Mass (CoM) Optimization
