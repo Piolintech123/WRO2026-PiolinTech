@@ -1,4 +1,4 @@
-<h1 align="center">⚡ Welcome to the PiolínTech Repository ⚡</h1>
+<h1 align="center"> Welcome to the PiolínTech Repository </h1>
 
 <div align="center">
 
