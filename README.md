@@ -2,15 +2,21 @@
 
 <div align="center">
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 <p align="center">
 <img width="823" height="477" alt="image" src="https://github.com/user-attachments/assets/812b7146-2706-4745-93e5-c2bc14222051" />
 </p>
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
+<p align="center">
+  <a href="https://youtube.com/@piolintech" target="_blank">
+    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube">
+  </a>
+  <a href="https://instagram.com/piolintech" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
+  </a>
+  <a href="https://github.com/PiolinTech" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+  </a>
+</p>
 </div>
-
-<h3 align="center"><em>"Precision in motion, engineered for the future."</em></h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/WRO-Future_Engineers_2026-blue?style=for-the-badge">
@@ -29,41 +35,23 @@
 
 Welcome to the official repository for Piolín, our autonomous robotic vehicle designed and built for the World Robot Olympiad (WRO) Future Engineers competition. This repository contains the complete mechanical designs, electrical schematics, firmware files, and computer vision algorithms developed by our team. **Piolín** is an advanced autonomous robotic vehicle engineered to compete in the **WRO Future Engineers 2026** category. Running on a high-performance **Raspberry Pi 5** processing core, the robot handles real-time edge computer vision via a **Huskylens** smart camera for strict lane alignment. It fuses visual telemetry with an array of **three ultrasonic distance sensors** to navigate complex track curves, identify lane markers, and safely execute dynamic obstacle evasion.
 
-| | |
-|---|---|
-|  **Competition** | WRO Future Engineers 2026 |
-|  **Region** | Panamá, Panamá |
-|  **Controller** | Raspberry Pi 5 + Arduino Nano |
-|  **Language** | Python 3 (Asyncio) + C++ |
-|  **Vision** | HuskyLens AI Camera |
-|  **Steering** | Ackermann Geometry |
+## Meet the Team
+
+We are **PiolínTech**, a robotics team from Colegio Bilingüe de Panamá. We are committed to pushing the boundaries of autonomous navigation through rigorous engineering and continuous iterative development.
+
+| Member | Information | Contact |
+| :---: | :--- | :---: |
+| <img src="https://github.com/user-attachments/assets/b11aaff5-3de3-4762-b0c1-a0094b9cf4e7" width="250" height="370" style="border-radius: 50%; object-fit: cover;"> | **Sebastián Martínez**<br>Colegio Bilingüe de Panamá | [📸 Instagram](https://www.instagram.com/sebastian.mvrl/) |
+| <img src="https://github.com/user-attachments/assets/dc507a8b-f1c1-435e-9df6-96d2e11e0cba" width="250" height="370" style="border-radius: 50%; object-fit: cover;"> | **Mia Cantoral**<br>Colegio Bilingüe de Panamá | [📸 Instagram](https://www.instagram.com/miaacnt) |
+| <img src="https://github.com/user-attachments/assets/0b5f11e1-4c58-45dd-b63a-45f6c2c5726a" width="250" height="370" style="border-radius: 50%; object-fit: cover;"> | **Christian Castrellón**<br>Colegio Bilingüe de Panamá | [📸 Instagram](https://www.instagram.com/cj.chriss) |
+| **Coach** | **Hanna Figueroa**<br>Thank you teacher Hanna for being our brightest and biggest inspiration out there. We truly admire and love you! :) | |
 
 ---
-<h3 align="center">Check us out! 👇</h3>
-
-<p align="center">
-  <a href="https://youtube.com/@piolintech" target="_blank">
-    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube">
-  </a>
-  <a href="https://instagram.com/piolintech" target="_blank">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
-  </a>
-  <a href="https://github.com/PiolinTech" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-  </a>
-</p>
-
----
-
-## WRO2026_FE_PiolínTech
 
 ## General Project Index
 
 You can use this index to navigate through our robot's documentation. Each section explains a specific part of Piolín’s design, including its mechanical structure, sensor architecture, software logic, engineering decisions, reproducibility materials, and additional resources.
 
----
-
-## 📌 General Project Index
 
 ### 1. Mobility and Mechanical Design
 * **[Outside of Piolin](./docs/hardware)**:
@@ -106,7 +94,7 @@ You can use this index to navigate through our robot's documentation. Each secti
 * **[Build Guide](./docs/reproducibility/)**: Bill of materials, assembly instructions, and project reproducibility notes.
 ---
 
-## 📌 Project Rundown
+## Project Rundown
 
 ### Piolín Goal & Structure 
 
@@ -124,11 +112,8 @@ Piolín operates on a high-modularity mechatronic framework, purposefully depart
 
 ---
 
-<h2 align="center">Meet the Piolín Platform</h2>
+<h2 align="center">Meet Piolín </h2>
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/812b7146-2706-4745-93e5-c2bc14222051" alt="Piolín v3" width="85%">
-</p>
 
 ### 1. Dimension Table
 | Technical Parameter | Specification Value | Engineering Notes / WRO Rules |
@@ -245,16 +230,6 @@ Physical reference orthogonal views are located in the [Vehicle Images](./v-phot
 
 ---
 
-## Meet the Team
-
-We are **PiolínTech**, a robotics team from Colegio Bilingüe de Panamá. We are committed to pushing the boundaries of autonomous navigation through rigorous engineering and continuous iterative development.
-
-| Member | Information | Contact |
-| :---: | :--- | :---: |
-| <img src="https://github.com/user-attachments/assets/b11aaff5-3de3-4762-b0c1-a0094b9cf4e7" width="250" height="370" style="border-radius: 50%; object-fit: cover;"> | **Sebastián Martínez**<br>Colegio Bilingüe de Panamá | [📸 Instagram](https://www.instagram.com/sebastian.mvrl/) |
-| <img src="https://github.com/user-attachments/assets/dc507a8b-f1c1-435e-9df6-96d2e11e0cba" width="250" height="370" style="border-radius: 50%; object-fit: cover;"> | **Mia Cantoral**<br>Colegio Bilingüe de Panamá | [📸 Instagram](https://www.instagram.com/miaacnt) |
-| <img src="https://github.com/user-attachments/assets/0b5f11e1-4c58-45dd-b63a-45f6c2c5726a" width="250" height="370" style="border-radius: 50%; object-fit: cover;"> | **Christian Castrellón**<br>Colegio Bilingüe de Panamá | [📸 Instagram](https://www.instagram.com/cj.chriss) |
-| **Coach** | **Hanna Figueroa**<br>Thank you teacher Hanna for being our brightest and biggest inspiration out there. We truly admire and love you! :) | |
 
 ## Performance & Demonstration Videos
 
