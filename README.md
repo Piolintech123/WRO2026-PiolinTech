@@ -28,7 +28,6 @@
   <img src="https://img.shields.io/badge/Processor-Raspberry_Pi_5-C51A4A?style=flat-square">
   <img src="https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square">
   <img src="https://img.shields.io/badge/Vision-HuskyLens-orange?style=flat-square">
-  <img src="https://img.shields.io/badge/Controller-Arduino_Nano-00979D?style=flat-square">
 </p>
 
 ---
