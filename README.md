@@ -214,13 +214,13 @@ Piolín operates on a high-modularity mechatronic framework, purposefully depart
 
 | System | Component | Primary Feature / Technical Specification |
 | --- | --- | --- |
-| **High-Level Processor** | **Raspberry Pi 5** | 2.4 GHz Quad-Core ARM Cortex-A76. Runs camera image parsing, PID calculations, and state machines. |
-| **Low-Level Microcontroller** | **Microcontroller** | ATmega328P. Handles instant hardware PWM generation for steering and millisecond sensor interrupts. |
-| **Computer Vision Engine** | **HuskyLens 2** | AI-driven camera connected via hardware I2C; localizes color pillars on the fly. |
-| **Distance Telemetry** | **HC-SR04 (x3)** | Active ultrasonic transducers angled at 30 degrees to sense diagonal walls predicted ahead. |
-| **Propulsion Power** | **Metal-Geared DC Motors** | High-RPM micro motors providing rapid acceleration out of tight turns. |
-| **Steering Precision** | **Micro Metal Servo** | Digital high-torque feedback actuator driving the steering rack without backlash. |
-| **Power Protection** | **Voltage Dividers** | 1 kOhm and 2 kOhm resistor pairs stepping Echo signals down from 5V to a safe 3.3V. |
+| **High-Level Processor** | **LEGO Mindstorms EV3** | ARM9-based processor. Handles multi-sensor fusion, PID motor control, and state machine logic. |
+| **Computer Vision Engine** | **PixyCam (Pixy2)** | Color-based object detection. Communicates via I2C/SPI to the EV3; handles real-time lane and marker parsing. |
+| **Navigation Sensors** | **Gyro Sensor** | Provides angular velocity and heading data for steering stabilization and turn precision. |
+| **Distance Telemetry** | **Ultrasonic Sensor** | Measures distance to walls and obstacles; used to maintain lane centering and collision avoidance. |
+| **Lane Tracking** | **Color Sensor** | Detects surface contrast and track markers; provides feedback for lane-keeping error corrections. |
+| **Propulsion & Steering** | **LEGO SPIKE/EV3 Motors** | High-torque output for rapid acceleration and precise steering actuation. |
+
 ---
 
 ### 3. Engineering Achievements
@@ -246,7 +246,7 @@ To address the structural flex identified in Phase 1, the frame was rebuilt usin
 
 ### 3. Version 3 (Current Hybrid Configuration)
 
-The current active configuration implements a hybrid structural paradigm. We preserved the rigid SPIKE Prime box-frame structure for compliance and modularity, but replaced the EV3 brick and standard LEGO motors with a Raspberry Pi 5, an Arduino Nano, and micro metal-geared DC motors. By soldering standard pin connectors and mounting the side ultrasonic sensors at a 30-degree forward-facing angle, we achieved high-fidelity telemetry, predictive wall sensing, and a lower center of gravity. This hybrid architecture bridges the gap between educational building platforms and advanced industrial robotics.
+The current active configuration implements an integrated sensor fusion paradigm. We preserved the rigid SPIKE Prime box-frame structure for compliance and modularity, while leveraging the LEGO Mindstorms EV3 Intelligent Brick to process a sophisticated sensor array. By integrating a Pixy Cam for real-time computer vision, alongside precision gyro, ultrasonic, and color sensors, we achieved high-fidelity telemetry, responsive obstacle detection, and accurate lane tracking. This architecture maximizes the potential of the LEGO ecosystem, delivering high-performance autonomous navigation within the constraints of the WRO competition.
 
 ---
 
@@ -445,13 +445,16 @@ An $FS$ of $17.71$ provides substantial torque headroom, preventing thermal satu
 The following table details the estimated current consumption across the primary subsystems to ensure the selection of a suitable power regulation module.
 
 | Component | Operating Voltage (V) | Avg. Current (A) | Peak Current (A) |
-| :--- | :---: | :---: | :---: |
-| Raspberry Pi 5 | 5.0 | 0.8 | 1.5 |
-| Microcontroller | 5.0 | 0.05 | 0.1 |
-| DC Motors (x2) | 7.4 | 0.4 | 1.2 |
-| Digital Steering Servo | 5.0 | 0.2 | 0.6 |
-| **Total** | -- | **1.45 A** | **3.40 A** |
+| --- | --- | --- | --- |
+| LEGO EV3 Brick | 9.0 | 0.20 | 0.50 |
+| PixyCam (Pixy2) | 5.0 | 0.10 | 0.15 |
+| EV3 L-Motors (x2) | 9.0 | 0.60 | 1.50 |
+| Sensors (Gyro, US, Color) | 5.0 | 0.05 | 0.10 |
+| **Total** | -- | **0.95 A** | **2.25 A** |
 
+---
+
+**Technical Note:** These values are estimates based on standard LEGO Mindstorms load profiles. The EV3 Brick draws variable current depending on the number of active sensors and processing load, while the L-Motors represent the primary power draw during high-speed acceleration or turning maneuvers.
 Regarding our power dynamic throughout the robot, a robust autonomous system requires fault-handling to prevent hardware damage during track edge cases.
 
 | Risk Factor | Mitigation Strategy | Failure Response |
