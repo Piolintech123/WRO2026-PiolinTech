@@ -4,7 +4,7 @@
 The development of our kid Piolín was not a linear path. It required a rigorous iterative engineering process that moved from a highly unstable proof of concept prototype to a tightly integrated autonomous vehicle ready for competition. This section documents our engineering journey in absolute detail. We explore the mechanical, electrical, and software transformations across our primary development phases. By analyzing our past failures and documenting our iterative solutions, we demonstrate the robustness, reliability, and engineering logic behind our final design choices.
 <br>
 
-### [Phase 1: The Initial Prototype](./models/evolution/Phase1.md)
+### [Phase 1: The Initial Prototype](./evolution/Phase1.md)
 
 Phase 1 represents our foundational attempt at solving the WRO track challenges. The primary goal during this early stage was simply to achieve basic mobility, verify sensor integration, and test initial lane tracking capabilities. However, this phase was heavily constrained by our reliance on standard LEGO Technic parts, failing external sensors, and structurally weak components that could not handle the physical demands of autonomous racing.
 
@@ -23,7 +23,7 @@ The software architecture in Phase 1 was strictly synchronous and relied on infe
 
 <br>
 
-### [Phase 2: The "All LEGO" Pure Architecture](./models/evolution/Phase2.md)
+### [Phase 2: The "All LEGO" Pure Architecture](./evolution/Phase2.md)
 
 Phase 2 marks a massive pivot in our engineering strategy. Realizing that complexity was our enemy, we completely discarded the unstable external camera and the weak structural components of Phase 1. Instead, we embraced a pure, centralized architecture built strictly from LEGO components. V2 was completely "blind" and had absolutely no external camera modules. We utilized the LEGO Mindstorms EV3 block, LEGO SPIKE structural elements, and LEGO Ultrasonic sensors to create a highly reliable, closed ecosystem.
 
@@ -44,7 +44,7 @@ The most significant leap in Phase 2 was the software overhaul. We rewrote the c
 
 <br>
 
-### [Phase 3: The Piolín Optimization](https://www.google.com/search?q=./models/evolution/Phase3.md)
+### [Phase 3: The Piolín Optimization](/evolution/Phase3.md)
 
 Phase 3 represents the maturation of our engineering process, marking the shift from experimental prototyping to a refined, competition-ready platform. The primary objective in this phase was to maximize mechanical reliability and sensor deterministic performance for the WRO 2026 Future Engineers competition. By abandoning the fragmented architectures of earlier phases and centralizing our logic on the EV3 Intelligent Brick, we have transformed the robot into a high-performance machine optimized for consistent, autonomous path following.
 
@@ -109,13 +109,13 @@ This comparison highlights the specific metrics and hardware choices that define
 
 The physical transformation of Piolín is best understood by comparing the structural layouts of our iterations.
 
-#### [PiolínTech V1 (Visual)](/models/PTechV1.png)
+#### [PiolínTech V1 (Visual)](/PTechV1.png)
 *(Click the link above to view the high resolution file in the repository)*
 
 **V1 Design Analysis:**
 As seen in the V1 render, the chassis is characterized by a higher profile and a reliance on a chaotic mix of hardware. The external generic camera is mounted too high, causing severe perspective distortion and massive balance issues. The steering geometry relies on the older, highly flexible 3 hole technic linkages that caused our initial tracking failures. The overall footprint is bulky, resulting in a larger turning radius that struggled to clear the inner corners of the WRO track.
 
-#### [PiolínTech V2 (Visual)](/models/PTechV2.png)
+#### [PiolínTech V2 (Visual)](/PTechV2.png)
 *(Click the link above to view the high resolution file in the repository)*
 
 **V2 Design Analysis:**
@@ -125,7 +125,7 @@ The V2 visual demonstrates a massive leap in our engineering capabilities by suc
 2. **Blind Sensor Array:** The chaotic external camera is gone. In its place, the front assembly features a rigid, dual LEGO Ultrasonic sensor array. These sensors are angled perfectly to capture the track walls without processing unnecessary background acoustic noise.
 3. **Optimized Pure LEGO Drivetrain:** The front steering and rear propulsion utilize standard LEGO SPIKE motors controlled natively by the EV3. All chaotic wiring is eliminated, creating a closed, clean, and highly reliable platform.
 
-#### [PiolínTech V3 (Visual)](/models/PTechV3.jpeg)
+#### [PiolínTech V3 (Visual)](/PTechV3.jpeg)
 *(Click the link above to view the high resolution file in the repository)*
 
 ### Summary of Evolution
