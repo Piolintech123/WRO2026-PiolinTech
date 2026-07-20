@@ -348,12 +348,18 @@ Physical reference orthogonal views are located in the [Vehicle Images](./v-phot
 | <img src="./v-photos/v2/Ptech_Right.png" width="300"> | <img src="./v-photos/v2/Ptech_Top.png" width="300"> | <img src="./v-photos/v2/Ptech_Down.png" width="300"> |
 
 **COMPLETE LEGO**
-| **Top (Superior)** | **Front (Frontal)** | **Left (Izquierda)** |
+| **Front View** | **Back View** | **Left View** |
 | :---: | :---: | :---: |
 | <img width="300" alt="Top View" src="https://github.com/user-attachments/assets/74e4f686-9589-420e-8f6c-983e1a564d8d" /> | <img width="300" alt="Front View" src="https://github.com/user-attachments/assets/a98c4f04-ae21-40e8-a16d-bbda9ea81a09" /> | <img width="300" alt="Left View" src="https://github.com/user-attachments/assets/dfc9a0a5-5dbb-4c47-a0b5-acfcf0a3b368" /> |
-| **Bottom (Inferior)** | **Back (Trasera)** | **Right (Derecha)** |
+| **Right View** | **Top View** | **Bottom View** |
 | <img width="300" alt="Bottom View" src="https://github.com/user-attachments/assets/67425bf3-6790-44ff-a507-e0062d2bbd27" /> | <img width="300" alt="Back View" src="https://github.com/user-attachments/assets/e759142e-90c6-4ca1-a956-842665266fd7" /> | <img width="300" alt="Right View" src="https://github.com/user-attachments/assets/e28bb114-7d07-4d95-b144-010c3d85a24a" /> |
 
+**V3 LEGO**
+| Front View | Back View | Left View |
+| :---: | :---: | :---: |
+| <img src="./v-photos/v3/V3Front.png" width="300"> | <img src="./v-photos/v3/V3BACKtech.png" width="300"> | <img src="./v-photos/v3/V3LeftPtech.png" width="300"> |
+| **Right View** | **Top View** | **Bottom View** |
+| <img src="./v-photos/v3/V3RightPtech.png" width="300"> | <img src="./v-photos/v3/V3UPPtech.png" width="300"> | <img src="./v-photos/v3/V3DownPtech.png" width="300"> |
 ---
 
 
