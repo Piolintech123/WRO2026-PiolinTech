@@ -1,101 +1,109 @@
-## The Evolution of PiolínTech
 
-The development of the Piolín robot for the WRO 2026 Future Engineers category was not a linear path. It required a rigorous iterative engineering process that moved from a basic proof of concept prototype to a highly tuned autonomous vehicle ready for competition. This section documents our engineering journey in detail. We explore the mechanical, electrical, and software transformations across our primary development phases. By analyzing our past failures and our iterative solutions, we demonstrate the robustness and reliability of our final design.
+## The Evolution of our robot Piolín
 
----
+The development of our kid Piolín was not a linear path. It required a rigorous iterative engineering process that moved from a highly unstable proof of concept prototype to a tightly integrated autonomous vehicle ready for competition. This section documents our engineering journey in absolute detail. We explore the mechanical, electrical, and software transformations across our primary development phases. By analyzing our past failures and documenting our iterative solutions, we demonstrate the robustness, reliability, and engineering logic behind our final design choices.
+<br>
 
-### [Phase 1: The Initial Prototype](./models/evolution/Phase1.md)
+### 🛠️ [Phase 1: The Initial Prototype](./models/evolution/Phase1.md)
 
-Phase 1 represents our foundational attempt at solving the WRO track challenges. The primary goal during this early stage was simply to achieve basic mobility, verify sensor integration, and test initial lane tracking capabilities. However, this phase was heavily constrained by our reliance on off the shelf structural elements, legacy hardware, and rudimentary control loops.
+Phase 1 represents our foundational attempt at solving the WRO track challenges. The primary goal during this early stage was simply to achieve basic mobility, verify sensor integration, and test initial lane tracking capabilities. However, this phase was heavily constrained by our reliance on standard LEGO Technic parts, failing external sensors, and structurally weak components that could not handle the physical demands of autonomous racing.
 
 #### Mechanical and Structural Baseline
-During our initial mechanical drafting, we heavily utilized standard plastic building elements to rapidly prototype the chassis. While this approach allowed for quick assembly, we immediately encountered severe structural limitations. For instance, specific structural beams caused major issues. We used a standard technic piece that has exactly 3 holes (two horizontal and one vertical) for our early steering knuckles. This specific component suffered from immense torsional flex when subjected to lateral cornering forces. This flex resulted in unpredictable steering geometry, making reliable PID calibration nearly impossible. The center of gravity was also excessively high, causing the inner wheels to lift during high speed turns and destabilizing the entire platform.
+During our initial mechanical drafting, we utilized standard plastic building elements to prototype the chassis. While this allowed for quick assembly, we immediately encountered severe structural limitations that degraded our physical performance. The most critical failure occurred in our front steering assembly. We used a standard technic piece that has exactly 3 holes (two horizontal and one vertical) to act as our primary steering knuckle. This specific component suffered from immense torsional flex when subjected to the lateral cornering forces of the track. This flex resulted in a shifting kingpin angle and unpredictable steering geometry, making reliable PD calibration nearly impossible. Furthermore, the center of gravity was excessively high, causing the inner wheels to lift during high speed turns and destabilizing the platform.
 
 #### Electrical and Processing Architecture
-The first iteration relied on a fragmented processing approach. We were attempting to bridge legacy control bricks with newer microcontrollers, which led to significant communication bottlenecks and hardware limitations. 
-*   **Motor Control:** We integrated the TB6612FNG motor driver to handle propulsion and steering. We mapped our logic to the `ain1` and `ain2` pins to ensure proper dual channel H-bridge operation for the main motors. However, our initial power delivery system lacked proper shielding and capacitors, leading to dangerous voltage spikes.
-*   **Data Logging Limitations:** We attempted to log telemetry data using an EV3 control brick. This proved highly ineffective because the EV3 had no micro SD card connected at the time. Without expandable storage, our onboard data logging was severely restricted, making it incredibly difficult to analyze sensor performance after a test run.
+The first iteration relied on a fragmented processing approach. We attempted to route sensor data through a chaotic mix of cables, leading to communication bottlenecks and hardware limitations.
+*   **Motor Control:** We utilized standard LEGO EV3 motors connected directly to the EV3 brick. While these motors were reliable, our cable routing was disorganized, leading to loose connections and signal dropouts during high speed maneuvers.
+*   **Vision Failures:** We initially utilized a generic external camera module that lacked any onboard processing. This generic camera sent raw video feeds directly to the main processor, completely overwhelming the system bandwidth. This caused severe frame drops and frequent false positives due to ambient track lighting changes. The integration of this external non standard part proved far too unstable for a reliable race run.
 
 #### Software and Logic Limitations
-The software architecture in Phase 1 was strictly synchronous and relied on inferior peripheral components.
-*   **Latency:** This blocking architecture meant that whenever the system processed a sensor input, the steering loop paused. This resulted in a stuttering movement profile where the robot would zig-zag down the straights instead of maintaining a smooth trajectory.
-*   **Vision Failures:** We initially utilized a different camera module that lacked onboard processing. This generic camera sent raw video feeds directly to the main processor, overwhelming the system and causing frequent false positives due to ambient light changes.
-
-#### Phase 1 Performance Metrics
-
-| Metric | Target | Phase 1 Result | Status |
-| :--- | :--- | :--- | :--- |
-| **Top Speed** | 1.2 m/s | 0.6 m/s | ❌ Fail |
-| **Steering Latency**| < 15 ms | 45 ms | ❌ Fail |
-| **Chassis Flex** | < 2 mm | 5.0 mm | ❌ Fail |
-| **Weight** | < 1.5 kg | 1.8 kg | ❌ Fail |
-
-**Engineering Takeaway from Phase 1:** 
-Standard building blocks and legacy hardware are insufficient for high velocity autonomous racing. We needed to design custom rigid components, upgrade our vision hardware, and completely overhaul our software to operate asynchronously.
+The software architecture in Phase 1 was strictly synchronous and relied on inferior peripheral components that constantly failed under load.
+*   **Latency:** This blocking architecture meant that whenever the generic camera processed a frame, the steering control loop paused. This resulted in a stuttering movement profile where the robot would zig zag violently down the straights instead of maintaining a smooth trajectory.
+*   **Inefficient Loops:** Our code was fragmented and difficult to manage. This made debugging incredibly difficult and massively increased the time it took to iterate and test new code between track runs.
 
 <br>
 
----
+### [Phase 2: The "All LEGO" Pure Architecture](./models/evolution/Phase2.md)
 
-### [Phase 2: The PiolínTech Overhaul](./models/evolution/Phase2.md)
+Phase 2 marks a massive pivot in our engineering strategy. Realizing that complexity was our enemy, we completely discarded the unstable external camera and the weak structural components of Phase 1. Instead, we embraced a pure, centralized architecture built strictly from LEGO components. V2 was completely "blind" and had absolutely no external camera modules. We utilized the LEGO Mindstorms EV3 block, LEGO SPIKE structural elements, and LEGO Ultrasonic sensors to create a highly reliable, closed ecosystem.
 
-Phase 2 marks the evolution from a basic prototype to a competition grade machine. We discarded the modular plastic framework and embraced custom fabrication, advanced embedded Linux processing, and AI accelerated computer vision.
+#### Advanced Mechanical Redesign with LEGO SPIKE
+To resolve the structural failures and flex of Phase 1, we transitioned entirely to an "All LEGO" framework. By leveraging the superior rigidity of modern LEGO SPIKE components, we eliminated the mechanical slop found in the older 3 hole technic pieces.
+*   **SPIKE Integration:** We utilized LEGO SPIKE frames and wheels to build a bespoke chassis that maximized rigidity while minimizing weight. The SPIKE wheels provided vastly superior traction on the track surface compared to our earlier iterations, preventing wheel slip during hard acceleration.
+*   **Centralized Balance:** The heavy battery packs and the EV3 controller were relocated to the absolute lowest deck of the chassis. This drastically improved cornering stability, lowered the roll center, and completely eliminated the wheel lift we experienced in Phase 1.
 
-#### Advanced Mechanical Redesign
-To resolve the structural failures of Phase 1, we transitioned entirely to 3D modeling using Blender. This allowed us to design a bespoke chassis that maximized rigidity while minimizing weight.
-*   **Custom Bevel Gears:** We 3D printed modified bevel gears to create a highly responsive Ackermann steering linkage. This eliminated the flex found in the older 3-hole structural pieces and provided a rigid direct steering response.
-*   **Low Center of Gravity:** The battery and Raspberry Pi 5 were relocated to the absolute lowest deck of the chassis. This drastically improved cornering stability and eliminated wheel lift.
+#### Pure LEGO Sensor and Processing Upgrades
+The electrical architecture was completely rebuilt to integrate the EV3 as our primary, stand alone control hub. There was absolutely zero external or third party hardware in this iteration, entirely eliminating the signal instability of Phase 1.
+*   **Memory and Storage Constraints:** A critical engineering challenge in Phase 2 was that our EV3 unit had no micro SD card connected. Without expandable storage, we had to heavily optimize our Python scripts. We stripped out all unnecessary libraries and logging functions so the code could deploy directly into the highly limited internal memory footprint of the EV3 brick.
+*   **Blind Navigation Strategy:** We completely removed the failing generic camera from Phase 1. V2 was entirely blind. We relied 100 percent on two LEGO EV3 Ultrasonic sensors to feel the track walls. This forced us to develop highly advanced acoustic filtering algorithms. The robot calculated the delta (difference) between the left and right ultrasonic pings to determine its exact lateral position within the lane.
 
-#### Processing Power and Sensor Upgrades
-The electrical architecture was completely rebuilt around the Raspberry Pi 5 to handle the demands of the WRO track.
-*   **Vision Acceleration:** We abandoned the older camera and integrated the HuskyLens AI camera via I2C. By offloading the color and centroid detection directly to the HuskyLens onboard FPGA, we freed up the Raspberry Pi 5 CPU for navigation tasks.
-*   **Clean Power Delivery:** We implemented a split rail power system. This ensured the Raspberry Pi 5 received a perfectly clean 5V, while the TB6612FNG driver received unrestricted current directly from the LiPo battery via the `ain1` and `ain2` logic pathways.
-
-#### Asynchronous Software Integration
-The most significant leap in Phase 2 was the software overhaul. We rewrote the core logic using the Python `asyncio` library.
-*   **Non-Blocking Loops:** The PID lane tracking algorithm now runs on a dedicated high frequency thread (100 Hz). This ensures the steering servo receives constant PWM updates regardless of what the vision system is processing.
-*   **Deterministic Parking:** We implemented precise motor encoder tracking for the final lap. Instead of relying on inaccurate timers, the robot calculates its exact spatial distance from the start row to execute a flawless position based deceleration sequence.
-
-#### Phase 2 Performance Metrics
-
-| Metric | Target | Phase 2 Result | Status |
-| :--- | :--- | :--- | :--- |
-| **Top Speed** | 1.2 m/s | 1.35 m/s | ✅ Pass |
-| **Steering Latency**| < 15 ms | 8 ms | ✅ Pass |
-| **Chassis Flex** | < 2 mm | 0.5 mm | ✅ Pass |
-| **Weight** | < 1.5 kg | 1.1 kg | ✅ Pass |
-
-**Engineering Takeaway from Phase 2:** 
-Custom 3D fabrication combined with asynchronous logic and FPGA accelerated vision creates a highly deterministic and reliable platform capable of handling the high speed requirements of the track.
+#### Software Integration with Python and Pybricks
+The most significant leap in Phase 2 was the software overhaul. We rewrote the core logic using Python via the Pybricks ecosystem to function as efficiently as possible within our pure LEGO hardware constraints.
+*   **Optimized Python Logic:** The PID lane tracking algorithm was programmed in Python to run continuously based purely on ultrasonic returns. Because there was no heavy video processing, the control loop ran at maximum speed. This ensured the LEGO steering motors received constant, uninterrupted updates to keep the robot perfectly centered between the track walls.
+*   **Deterministic Parking:** Because the robot was blind, we could not use visual markers to stop at the finish line. We implemented precise motor encoder tracking using the Pybricks libraries. For the final lap, the robot calculated its exact spatial distance from the start row to execute a flawless position based deceleration sequence.
 
 <br>
 
----
+### Architectural Flowchart: V1 vs V2
+
+The transition from a fragmented external system to a pure LEGO architecture drastically simplified our data pipeline. The flowchart below illustrates how we eliminated processing bottlenecks in Phase 2.
+
+```mermaid
+graph TD
+    subgraph Phase 1: Fragmented Architecture
+        V1Cam[Generic Camera] -->|Raw Video Feed| V1Proc[EV3 Brick]
+        V1US[LEGO Ultrasonic] -->|Analog Ping| V1Proc
+        V1Proc -->|Blocking Logic| V1Motor[LEGO Motors]
+        V1Proc -.->|Signal Interference| V1Noise[Instability]
+    end
+
+    subgraph Phase 2: Pure LEGO Architecture
+        V2US[LEGO Ultrasonic Array] -->|Digital Ping| V2EV3[LEGO EV3 Brick]
+        V2EV3 -->|Pybricks Python Logic| V2Math[PD Acoustic Filtering]
+        V2Math -->|Non-Blocking Loop| V2EV3
+        V2EV3 -->|Native Control| V2Motor[LEGO SPIKE Motors]
+    end
+
+```
+
+### Technical Comparison Matrix
+
+This comparison highlights the specific metrics and hardware choices that defined the evolution of PiolínTech.
+
+| Feature Category | Phase 1 (Initial Prototype) | Phase 2 (Pure LEGO V2) | Engineering Advantage of V2 |
+| --- | --- | --- | --- |
+| **Logic Controller** | LEGO EV3 | LEGO Mindstorms EV3 | Native hardware support, reliable ecosystem |
+| **Programming** | C++ / Synchronous | Python / Pybricks | Rapid iteration, optimized loops |
+| **Vision System** | Generic External Camera | **None (Completely Blind)** | Zero latency, 100% loop consistency |
+| **Sensors** | Generic + LEGO Ultrasonic | LEGO EV3 Digital Ultrasonic | Highly accurate digital returns, zero external noise |
+| **Motor Drivers** | Native EV3 | Native EV3 | Closed loop, zero signal interference |
+| **Storage** | External Modules | Internal EV3 Memory | Forced highly optimized code footprint |
+| **Chassis Frame** | Standard 3 hole Technic | LEGO SPIKE Elements | Extreme rigidity, zero torsional flex on kingpins |
+| **Top Speed** | 0.6 m/s (Erratic) | 1.1 m/s (Stable) | 83% speed increase via acoustic tracking |
+| **Stop Strategy** | Unreliable Timers | Pybricks Motor Encoders | Flawless, repeatable parking |
 
 ### Visualizing the Evolution
 
-The physical transformation of Piolín is best understood by comparing the structural layouts of our iterations. Below are the orthographic and perspective renders of the chassis evolution. These highlight the transition from bulky prototyping to sleek custom engineering.
+The physical transformation of Piolín is best understood by comparing the structural layouts of our iterations.
 
-#### [PiolínTech V1 (Visual)](./models/PTechV1.png)
+#### [PiolínTech V1 (Visual)](/models/PTechV1.png)
 *(Click the link above to view the high resolution file in the repository)*
-
-![PiolínTech V1](/models/PTechV1.png)
 
 **V1 Design Analysis:**
-As seen in the V1 render, the chassis is characterized by a higher profile and a heavy reliance on standard grid plate mounting. The sensor array is mounted statically, and the wiring harness is exposed to the elements. The steering geometry in this visual relies on the older flexible linkages that caused our initial latency issues. The generic camera is mounted too high, causing perspective distortion. The overall footprint is bulky, resulting in a larger turning radius that struggled with the inner corners of the WRO track.
+As seen in the V1 render, the chassis is characterized by a higher profile and a reliance on a chaotic mix of hardware. The external generic camera is mounted too high, causing severe perspective distortion and massive balance issues. The steering geometry relies on the older, highly flexible 3 hole technic linkages that caused our initial tracking failures. The overall footprint is bulky, resulting in a larger turning radius that struggled to clear the inner corners of the WRO track.
 
-#### [PiolínTech V2 (Visual)](./models/PTechV2.png)
+#### [PiolínTech V2 (Visual)](/models/PTechV2.png)
 *(Click the link above to view the high resolution file in the repository)*
 
-![PiolínTech V2](/models/PTechV2.png)
-
 **V2 Design Analysis:**
-The V2 visual demonstrates the massive leap in our engineering capabilities. 
-1.  **Streamlined Chassis:** The main body is clearly lower and more compact. The custom 3D printed chassis components designed in Blender perfectly cradle the Raspberry Pi 5 and the battery, lowering the center of mass.
-2.  **Integrated Vision:** The new HuskyLens AI module is mounted on a custom vibration dampened TPU bracket. It is angled precisely to capture both the track lines and upcoming obstacles without processing unnecessary background noise.
-3.  **Optimized Drivetrain:** The front steering assembly clearly features our custom printed bevel gears. This provides a tighter turning radius and aggressive Ackermann geometry. The wiring for the dual ultrasonic sensors and the TB6612FNG driver is routed internally to prevent snagging during high speed maneuvers.
+The V2 visual demonstrates a massive leap in our engineering capabilities by successfully integrating a pure, blind, All LEGO architecture.
 
----
+1. **Streamlined SPIKE Chassis:** The main body is lower and much more compact. The integration of LEGO SPIKE structural components perfectly cradles the EV3 block, lowering the center of mass significantly.
+2. **Blind Sensor Array:** The chaotic external camera is gone. In its place, the front assembly features a rigid, dual LEGO Ultrasonic sensor array. These sensors are angled perfectly to capture the track walls without processing unnecessary background acoustic noise.
+3. **Optimized Pure LEGO Drivetrain:** The front steering and rear propulsion utilize standard LEGO SPIKE motors controlled natively by the EV3. All chaotic wiring is eliminated, creating a closed, clean, and highly reliable platform.
 
 ### Summary of Evolution
-The journey from V1 to V2 encapsulates the core engineering ethos of the WRO Future Engineers category. By systematically identifying bottlenecks in our hardware flex, power distribution, and software latency, we successfully engineered a fully custom autonomous vehicle. The transition from off the shelf parts to Blender 3D modeled components, combined with the jump to HuskyLens vision and asynchronous Python programming, ensures PiolínTech is ready to compete at the highest level.
+
+The journey from V1 to V2 encapsulates the core engineering ethos of our team. By systematically identifying bottlenecks in our hardware flex and software latency in Phase 1, we successfully engineered a highly stable platform in Phase 2. The transition from a failing mix of external parts to a pure, blind, All LEGO architecture powered by the EV3, SPIKE components, and Pybricks Python logic ensured PiolínTech had a rock solid foundation. Mastering blind acoustic navigation proved that our fundamental math and chassis design were flawless.
+
+```
