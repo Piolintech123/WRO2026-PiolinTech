@@ -72,14 +72,14 @@ Custom 3D fabrication combined with asynchronous logic and FPGA accelerated visi
 
 ---
 
-### 📸 Visualizing the Evolution
+### Visualizing the Evolution
 
 The physical transformation of Piolín is best understood by comparing the structural layouts of our iterations. Below are the orthographic and perspective renders of the chassis evolution. These highlight the transition from bulky prototyping to sleek custom engineering.
 
 #### [PiolínTech V1 (Visual)](./models/PTechV1.png)
 *(Click the link above to view the high resolution file in the repository)*
 
-![PiolínTech V1](./models/PTechV1.png)
+![PiolínTech V1](/models/PTechV1.png)
 
 **V1 Design Analysis:**
 As seen in the V1 render, the chassis is characterized by a higher profile and a heavy reliance on standard grid plate mounting. The sensor array is mounted statically, and the wiring harness is exposed to the elements. The steering geometry in this visual relies on the older flexible linkages that caused our initial latency issues. The generic camera is mounted too high, causing perspective distortion. The overall footprint is bulky, resulting in a larger turning radius that struggled with the inner corners of the WRO track.
@@ -87,7 +87,7 @@ As seen in the V1 render, the chassis is characterized by a higher profile and a
 #### [PiolínTech V2 (Visual)](./models/PTechV2.png)
 *(Click the link above to view the high resolution file in the repository)*
 
-![PiolínTech V2](./models/PTechV2.png)
+![PiolínTech V2](/models/PTechV2.png)
 
 **V2 Design Analysis:**
 The V2 visual demonstrates the massive leap in our engineering capabilities. 
