@@ -6,9 +6,7 @@ Phase 3 represents the definitive culmination of our engineering efforts for the
 
 The transition into Phase 3 required a fundamental reevaluation of our computing and structural priorities. In previous phases, the pursuit of excessive computational power led to fragmented architectures that were highly susceptible to communication bottlenecks and hardware failures. The core philosophy of Phase 3 is robust autonomy through integration. We deliberately selected the EV3 Intelligent Brick to serve as the unified processing core. This platform provides a factory synchronized environment where motor feedback loops and internal bus timings operate with absolute predictability. In a competition environment where ambient lighting, track surface conditions, and physical vibrations constantly threaten stability, the EV3 isolates our control logic from the unpredictable operating system latencies common in general purpose microcomputers. This guarantees that our control algorithms execute precisely when expected.
 
-<p align="center">
-  <img src="./models/PTechV3.jpeg" width="400" alt="Piolín V3 Model">
-</p>
+<img width="960" height="1280" alt="image" src="https://github.com/user-attachments/assets/56fffe03-1cff-4e25-8722-89304af1c113" />
 
 #### Advanced Structural Dynamics and Materials
 
