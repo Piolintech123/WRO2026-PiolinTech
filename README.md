@@ -52,46 +52,132 @@ We are **PiolínTech**, a robotics team from Colegio Bilingüe de Panamá. We ar
 You can use this index to navigate through our robot's documentation. Each section explains a specific part of Piolín’s design, including its mechanical structure, sensor architecture, software logic, engineering decisions, reproducibility materials, and additional resources.
 
 
+## 📌 General Project Index
+
 ### 1. Mobility and Mechanical Design
-* **[Outside of Piolin](./docs/hardware)**:
-    * **[Project Overview](./docs/hardware/01_POverview.md)**
-    * **[Structural Components](./docs/hardware/02_HComponents.md)**
-    * **[Robot Mobility](./docs/hardware/05_RMobility.md)**
-* **[Our Evolution](./models/evolution)**:
-    * **[Phase 1](./models/evolution/Phase1.md)**
-    * **[Phase 2](./models/evolution/Phase2.md)**
-    * **[PiolínTech V1 (Visual)](./models/evolution/PTechV1.png)**
-* **[Piolin Overall](./v-photos)**: Orthogonal and perspective photography of the physical vehicle.
+*This section covers the physical foundation of Piolín, including chassis architecture, structural design, and the iterative progression of mechanical performance optimization.*
+
+* **[Project Overview](./docs/hardware/01_POverview.md)**
+  - Introduces Piolín as our WRO Future Engineers 2026 robot.
+  - Explains the vehicle’s main purpose, competition context, and overall design philosophy.
+  - Summarizes the integration between mechanical structure, sensors, and software.
+
+* **[Structural Components](./docs/hardware/02_HComponents.md)**
+  - Details the materials used for the chassis, including custom 3D-printed parts and fasteners.
+  - Explains the mechanical design choices for mounting sensors and drive-train components.
+  - Provides a breakdown of the structural integrity and weight distribution strategy.
+
+* **[Robot Mobility](./docs/hardware/05_RMobility.md)**
+  - Analyzes the kinematics of the steering system and traction control.
+  - Discusses motor selection and the mechanical transmission logic for optimal speed.
+  - Explains how chassis geometry affects cornering and track stability.
+
+* **[Phase 1](./models/evolution/Phase1.md)**
+  - Documents the initial prototyping stage and core mechanical concepts.
+  - Details early design challenges and identified failure modes.
+  - Outlines the initial lessons learned during the first track trials.
+
+* **[Phase 2](./models/evolution/Phase2.md)**
+  - Describes the transition to refined structural components and weight optimization.
+  - Explains how performance data from Phase 1 informed these design improvements.
+  - Highlights final adjustments made to the center of gravity and mechanical balance.
+
+* **[PiolínTech V1 (Visual)](./models/evolution/PTechV1.png)**
+  - Provides a high-level visual representation of the mechanical assembly.
+  - Shows the final CAD layout for the PiolínTech chassis architecture.
+
+* **[Piolin Overall](./v-photos)**
+  - Contains orthogonal and perspective photographs for technical validation.
+  - Documents the final physical state of the robot for competition judges.
+
+---
 
 ### 2. Power and Sensor Architecture
-* **[Technical Details](./docs/schemes)**: Circuit schematics, power distribution maps, and wiring.
-* **[Sensor Configuration](./docs/hardware)**:
-    * **[Power and Sensor Config](./docs/hardware/03_PowerSensorconfig.md)**
-    * **[Ultrasonic Sensor Data](./docs/hardware/04_USSensorD.md)**
+*Details the sensory processing "brain" and the power distribution system required to maintain hardware stability under high-load conditions.*
+
+* **[Technical Details](./docs/schemes)**
+  - Includes comprehensive circuit schematics and power distribution maps.
+  - Maps the wiring connections between the Raspberry Pi 5, motor drivers, and sensors.
+
+* **[Power and Sensor Config](./docs/hardware/03_PowerSensorconfig.md)**
+  - Details the voltage regulation strategy and battery management for long-run performance.
+  - Explains how to filter environmental electrical noise to maintain sensor precision.
+  - Provides configuration steps for the power-delivery hardware.
+
+* **[Ultrasonic Sensor Data](./docs/hardware/04_USSensorD.md)**
+  - Documents the calibration tables for distance detection in various track conditions.
+  - Explains the logic for interpreting sensor data to maintain lane centering.
+
+---
 
 ### 3. Software Architecture and Obstacle Strategy
-* **[Inside of Piolin](./docs/software)**:
-    * **[Software Architecture](./docs/software/01_SWArchitecture.md)**
-    * **[General Configuration](./docs/software/02_GConfig.md)**
-    * **[HuskyLens Vision](./docs/software/03_CameraHLVision.md)**
-    * **[RGB Detection Logic](./docs/software/04_RGBdetection.md)**
-    * **[Testing & Analysis](./docs/software/PTesting&Analysis.md)**
-* **[Flowcharts and Resources](./docs/embed)**:
-    * **[Navigation State Flowchart](./docs/embed/01_NVStateFC.md)**
-    * **[Vision Processing Logic](./docs/embed/02_VProcessing.md)**
-    * **[Torque Calculation](./docs/embed/03_TorqueCalc.png)**
-* **[Our Programming](./code)**:
-    * **[R1](./code/Round1)**: Source code and calibration files used in Round 1.
-    * **[R2](./code/Round2)**: Optimized logic and sensor adjustments utilized in Round 2.
+*The core of Piolín: the logic, decision-making, and source code enabling autonomous navigation and obstacle avoidance.*
+
+* **[Software Architecture](./docs/software/01_SWArchitecture.md)**
+  - Explains the asynchronous framework and the non-blocking state machine hierarchy.
+  - Describes the communication protocol between the Raspberry Pi and peripheral modules.
+
+* **[General Configuration](./docs/software/02_GConfig.md)**
+  - Lists global constants, library dependencies, and environment variables.
+  - Provides the base configuration required to calibrate the robot to the track environment.
+
+* **[HuskyLens Vision](./docs/software/03_CameraHLVision.md)**
+  - Details the configuration for the AI camera and object detection pipelines.
+  - Explains how frame data is processed via the FPGA co-processor.
+
+* **[RGB Detection Logic](./docs/software/04_RGBdetection.md)**
+  - Outlines the algorithms for color identification (Red/Green) and trajectory planning.
+  - Explains how the robot interprets RGB inputs to trigger obstacle bypass maneuvers.
+
+* **[Testing & Analysis](./docs/software/PTesting&Analysis.md)**
+  - Presents technical performance metrics and competitive rationale for our software choices.
+  - Compares the PiolínTech logic against traditional EV3 or synchronous control models.
+
+* **[Navigation State Flowchart](./docs/embed/01_NVStateFC.md)**
+  - Visualizes the integrated control system logic and state transitions.
+  - Provides a step-by-step map of how the robot switches between tracking and avoidance.
+
+* **[Vision Processing Logic](./docs/embed/02_VProcessing.md)**
+  - Details the logic flow of the computer vision pipeline.
+  - Explains how object detection influences steering PWM output.
+
+* **[Torque Calculation](./docs/embed/03_TorqueCalc.png)**
+  - Visualizes the mathematical analysis used to determine motor torque requirements.
+  - Demonstrates the calculation for force and acceleration during high-speed curves.
+
+* **[R1](./code/Round1)**
+  - Contains source code and calibration files utilized in Round 1.
+  - Includes diagnostic logs and performance data recorded during the first official run.
+
+* **[R2](./code/Round2)**
+  - Contains optimized logic and adjusted sensor thresholds for improved performance.
+  - Reflects the final code state for the second round of competition.
+
+---
 
 ### 4. Systems Thinking and Engineering Decisions
-* **[Get to know us](./t-gtku)**: Meet the team, our story, and our specific roles in development.
-* **[Important Documents](./docs)**: Technical reports, design decision logs, and performance analysis.
+*Contextualizes the team's development journey and justifies the engineering trade-offs.*
+
+* **[Get to know us](./t-gtku)**
+  - Profiles the team members, our collective background, and individual project roles.
+  - Shares the story of our development process and engineering motivations.
+
+* **[Important Documents](./docs)**
+  - Houses all formal technical reports and project progress documentation.
+  - Includes design decision logs and performance analysis summaries.
+
+---
 
 ### 5. Reproducibility and GitHub Quality
-* **[Our Robot in Action](./videos)**: Video logs and live track test runs.
-* **[Build Guide](./docs/reproducibility/)**: Bill of materials, assembly instructions, and project reproducibility notes.
----
+*Resources designed to ensure the project is functional, transparent, and replicable.*
+
+* **[Our Robot in Action](./videos)**
+  - Hosts video logs and live track test runs.
+  - Serves as performance evidence for technical verification.
+
+* **[Build Guide](./docs/reproducibility/)**
+  - Provides a full Bill of Materials (BOM) for the project.
+  - Offers step-by-step assembly instructions and tips for system replication.
 
 ## Project Rundown
 
