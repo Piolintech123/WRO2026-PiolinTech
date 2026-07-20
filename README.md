@@ -25,15 +25,14 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Processor-Raspberry_Pi_5-C51A4A?style=flat-square">
+  <img src="https://img.shields.io/badge/Processor-EV3-C51A4A?style=flat-square">
   <img src="https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square">
-  <img src="https://img.shields.io/badge/Vision-HuskyLens-orange?style=flat-square">
+  <img src="https://img.shields.io/badge/Vision-PixyCam-orange?style=flat-square">
 </p>
 
 ---
 
-Welcome to the official repository for Piolín, our autonomous robotic vehicle designed and built for the World Robot Olympiad (WRO) Future Engineers competition. This repository contains the complete mechanical designs, electrical schematics, firmware files, and computer vision algorithms developed by our team. **Piolín** is an advanced autonomous robotic vehicle engineered to compete in the **WRO Future Engineers 2026** category. Running on a high-performance **Raspberry Pi 5** processing core, the robot handles real-time edge computer vision via a **Huskylens** smart camera for strict lane alignment. It fuses visual telemetry with an array of **three ultrasonic distance sensors** to navigate complex track curves, identify lane markers, and safely execute dynamic obstacle evasion.
-
+Welcome to the official repository for Piolín, our autonomous robotic vehicle designed and built for the World Robot Olympiad (WRO) Future Engineers competition. This repository contains the complete mechanical designs, electrical schematics, firmware files, and algorithms developed by our team. Piolín is an advanced autonomous robotic vehicle engineered to compete in the WRO Future Engineers 2026 category. Built entirely on a LEGO platform, the robot utilizes a Pixy Cam for real-time computer vision to ensure strict lane alignment. It fuses this visual telemetry with an integrated gyro, ultrasonic sensor, and color sensor array to navigate complex track curves, identify lane markers, and safely execute dynamic obstacle evasion.
 ## Meet the Team
 
 We are **PiolínTech**, a robotics team from Colegio Bilingüe de Panamá. We are committed to pushing the boundaries of autonomous navigation through rigorous engineering and continuous iterative development.
@@ -183,8 +182,7 @@ You can use this index to navigate through our robot's documentation. Each secti
 
 ### Piolín Goal & Structure 
 
-Piolín operates on a high-modularity mechatronic framework, purposefully departing from standard structural limitations to achieve deterministic mechanical response. The control software relies on a deterministic execution flow where Thread 1 polls sensor telemetry and Thread 2 runs the PD control loop at 100 Hz. This ensures that sensor latency does not degrade our physical actuation. Our primary objective is to develop an elegant, highly reproducible autonomous vehicle capable of completing both the Open Challenge and the Obstacle Challenge with maximum speed and reliability. By using a hybrid setup, combining the raw mechanical flexibility of the LEGO/SPIKE ecosystem with custom DC motors, microcontrollers, and a Raspberry Pi 5, we bridge the gap between educational building platforms and advanced industrial robotics.
-
+Piolín operates on a high-modularity mechatronic framework, purposefully departing from standard structural limitations to achieve a deterministic mechanical response. The control software relies on a deterministic execution flow where we continuously poll sensor telemetry to drive our PD control loop. This ensures that sensor latency does not degrade our physical actuation. Our primary objective is to develop an elegant, highly reproducible autonomous vehicle capable of completing both the Open Challenge and the Obstacle Challenge with maximum speed and reliability. By utilizing a fully integrated LEGO ecosystem, we combine the structural rigidity of SPIKE components with the advanced capabilities of our Pixy Cam, gyro, ultrasonic sensor, and color sensor suite to create a sophisticated, autonomous platform.
 
 ### Engineering Roadmap: Road to Nationals
 
@@ -212,7 +210,8 @@ Piolín operates on a high-modularity mechatronic framework, purposefully depart
 | **Front Tires (Steering)** | 42.8 mm (Diameter) | Low-friction guide wheels for effortless steering pivot. |
 | **Total Vehicle Mass** | 721.41 g | Mass optimized to reduce momentum during sudden turns. |
 
-### 2. Feature Table
+### System Specifications
+
 | System | Component | Primary Feature / Technical Specification |
 | --- | --- | --- |
 | **High-Level Processor** | **Raspberry Pi 5** | 2.4 GHz Quad-Core ARM Cortex-A76. Runs camera image parsing, PID calculations, and state machines. |
@@ -222,27 +221,42 @@ Piolín operates on a high-modularity mechatronic framework, purposefully depart
 | **Propulsion Power** | **Metal-Geared DC Motors** | High-RPM micro motors providing rapid acceleration out of tight turns. |
 | **Steering Precision** | **Micro Metal Servo** | Digital high-torque feedback actuator driving the steering rack without backlash. |
 | **Power Protection** | **Voltage Dividers** | 1 kOhm and 2 kOhm resistor pairs stepping Echo signals down from 5V to a safe 3.3V. |
-
-
 ---
 
 ### 3. Engineering Achievements
-*   **Hardware PWM Allocation:** By anchoring the steering signal to the Pi 5's `PWM0` hardware clock, we reduced latency from 18ms to 1.2ms.
-*   **Transient Response:** Architecture decoupling suppressed oscillation cycles, allowing the robot to recover stable trajectories within 220ms.
-*   **Involute Gearbox:** Custom FDM-printed gears provide a 1:1 torque match with near-zero-slip power transmission.
+
+* **Hardware PWM Allocation**: By anchoring the steering signal to the dedicated hardware clock on the Raspberry Pi 5, we reduced control latency from 18ms to 1.2ms, ensuring highly responsive maneuvering at high speeds.
+* **Transient Response Optimization**: Through the decoupling of our vision processing and control logic, we successfully suppressed oscillation cycles. This allows the robot to recover a stable trajectory within 220ms after executing aggressive turns.
+* **Precision Involute Gearbox**: Our custom FDM-printed gear assemblies were engineered to provide an optimized torque match, delivering near-zero-slip power transmission for our high-speed drivetrain while maintaining structural integrity.
+
 
 ---
 
-## Structural Evolution (v1, v2, & v3)
+## Structural Evolution of PiolínTech
 
-The mechanical architecture of our robot transitioned through three distinct phases to resolve physical weaknesses under live track conditions:
+The mechanical architecture of our robot transitioned through three distinct phases to resolve physical weaknesses and processing bottlenecks identified under live track conditions.
 
-1. **Version 1 (Phase 1.0 - LEGO Technic Base)**:
-The early model relied entirely on a standard LEGO Technic chassis driven by the LEGO Mindstorms EV3 Intelligent Brick. The primary limitation was structural play; the flexible nature of plastic snap-pin connectors allowed significant chassis twist under high steering torque, leading to physical track drift. Additionally, the EV3 processor suffered from severe loop latency and thread jitter when trying to parse ultrasonic data and color readings concurrently.
-2. **Version 2 (Phase 1.5 - SPIKE Box Braced)**:
-To address chassis flex, the frame was rebuilt using cross-braced white and grey LEGO SPIKE Prime beams, forming a rigid overhead bridge. While this successfully eliminated the vertical chassis twist, the system still suffered from electrical contact dropouts. Standard RJ12 telephone-style cables vibrated loose inside the EV3 ports during track runs, requiring manual tape reinforcement on critical telemetry lines to prevent software freezes.
-3. **Version 3 (Current Hybrid Configuration)**:
-The current active configuration implements a hybrid structural paradigm. We preserved the rigid SPIKE Prime box-frame structure for compliance and modularity, but replaced the heavy EV3 brick and LEGO motors with a Raspberry Pi 5, an Arduino Nano, and micro metal-geared DC motors. By soldering standard pin connectors and mounting the side ultrasonic sensors at a 30-degree forward-facing angle, we achieved stable telemetry, predictive wall sensing, and a lower overall center of gravity.
+### 1. Version 1 (Phase 1.0: Prototype Chassis)
+
+The initial prototype utilized a standard LEGO Technic chassis driven by the LEGO Mindstorms EV3 Intelligent Brick. The primary limitation during this phase was structural compliance. The flexible nature of plastic snap-pin connectors allowed for significant chassis twist under high steering torque, which caused erratic behavior on the track. Additionally, the EV3 processor encountered severe loop latency and thread jitter when attempting to parse ultrasonic data and color readings concurrently, which prevented reliable autonomous navigation.
+
+### 2. Version 2 (Phase 1.5: LEGO SPIKE Stabilization)
+
+To address the structural flex identified in Phase 1, the frame was rebuilt using cross-braced white and grey LEGO SPIKE Prime beams, creating a rigid overhead bridge structure. This successfully eliminated vertical chassis twist and established a stable, fully LEGO ecosystem. However, this phase remained "blind" and reliant solely on ultrasonic sensing, as we had yet to integrate external vision processing. The system was highly stable for its scope, but it reached its physical performance ceiling in terms of processing power and sensor-driven decision making.
+
+### 3. Version 3 (Current Hybrid Configuration)
+
+The current active configuration implements a hybrid structural paradigm. We preserved the rigid SPIKE Prime box-frame structure for compliance and modularity, but replaced the EV3 brick and standard LEGO motors with a Raspberry Pi 5, an Arduino Nano, and micro metal-geared DC motors. By soldering standard pin connectors and mounting the side ultrasonic sensors at a 30-degree forward-facing angle, we achieved high-fidelity telemetry, predictive wall sensing, and a lower center of gravity. This hybrid architecture bridges the gap between educational building platforms and advanced industrial robotics.
+
+---
+
+### Engineering Summary
+
+| Version | Platform | Processing | Key Achievement |
+| --- | --- | --- | --- |
+| **V1** | Technic / EV3 | EV3 Brick | Initial proof of concept |
+| **V2** | SPIKE / EV3 | EV3 Brick | Structural rigidity via SPIKE box-bracing |
+| **V3** | SPIKE / Hybrid | EV3 Brick| High-speed sensor fusion and metal drivetrain |
 
 
 ---
