@@ -8,9 +8,9 @@ Crucially, these views track our mechanical solutions for minimizing chassis fle
 ## **PARTIALLY LEGO**
 | Front View | Back View | Left View |
 | :---: | :---: | :---: |
-| <img src="./v-photos/v2/Ptech_Front.png" width="300"> | <img src="./v-photos/v2/Ptech_Back.png" width="300"> | <img src="./v-photos/v2/Ptech_Left.png" width="300"> |
+| <img src="./v2/Ptech_Front.png" width="300"> | <img src="./v2/Ptech_Back.png" width="300"> | <img src="./v2/Ptech_Left.png" width="300"> |
 | **Right View** | **Top View** | **Bottom View** |
-| <img src="./v-photos/v2/Ptech_Right.png" width="300"> | <img src="./v-photos/v2/Ptech_Top.png" width="300"> | <img src="./v-photos/v2/Ptech_Down.png" width="300"> |
+| <img src="./v2/Ptech_Right.png" width="300"> | <img src="./v2/Ptech_Top.png" width="300"> | <img src="./v2/Ptech_Down.png" width="300"> |
 
 ## **COMPLETE LEGO**
 | **Front View** | **Back View** | **Left View** |
@@ -22,7 +22,7 @@ Crucially, these views track our mechanical solutions for minimizing chassis fle
 ## **V3 LEGO**
 | Front View | Back View | Left View |
 | :---: | :---: | :---: |
-| <img src="./v-photos/v3/V3Front.png" width="300"> | <img src="./v-photos/v3/V3BACKtech.png" width="300"> | <img src="./v-photos/v3/V3LeftPtech.png" width="300"> |
+| <img src="./v3/V3Front.png" width="300"> | <img src="./v3/V3BACKtech.png" width="300"> | <img src="./v3/V3LeftPtech.png" width="300"> |
 | **Right View** | **Top View** | **Bottom View** |
-| <img src="./v-photos/v3/V3RightPtech.png" width="300"> | <img src="./v-photos/v3/V3UPPtech.png" width="300"> | <img src="./v-photos/v3/V3DownPtech.png" width="300"> |
+| <img src="./v3/V3RightPtech.png" width="300"> | <img src="./v3/V3UPPtech.png" width="300"> | <img src="./v3/V3DownPtech.png" width="300"> |
 ---
