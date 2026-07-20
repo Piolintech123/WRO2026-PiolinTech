@@ -26,6 +26,7 @@ Our journey began in June 2025. What started as an ambitious project quickly bec
 
 ### 2026: The Hybrid Era
 
-*   **2026: Piolín Development**
-    Entering 2026, we implemented a total architectural shift, adopting a hybrid system featuring the Raspberry Pi 5 for heavy computation and an Arduino Nano for precision real-time actuation. This culminated in "Piolín," our high-performance machine optimized for speed, modularity, and reliable autonomous navigation.
+*   2026: Piolín Development
+Entering 2026, we finalized the architecture of "Piolín" specifically for the WRO Future Engineers competition. We transitioned to the LEGO Mindstorms EV3 platform to leverage its deterministic, integrated performance and robust handling of sensor data. Our chassis design evolved into a hybrid system, combining the modularity of LEGO Technic with custom 3D-printed structural components to ensure maximum rigidity and steering precision. This iteration focuses on high-level reliability, stability, and consistent autonomous navigation, providing a proven, competition-ready foundation.
+
     <p align="center"><img src="https://github.com/user-attachments/assets/812b7146-2706-4745-93e5-c2bc14222051" width="200"></p>
