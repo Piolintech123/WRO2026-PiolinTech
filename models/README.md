@@ -105,5 +105,3 @@ The V2 visual demonstrates a massive leap in our engineering capabilities by suc
 ### Summary of Evolution
 
 The journey from V1 to V2 encapsulates the core engineering ethos of our team. By systematically identifying bottlenecks in our hardware flex and software latency in Phase 1, we successfully engineered a highly stable platform in Phase 2. The transition from a failing mix of external parts to a pure, blind, All LEGO architecture powered by the EV3, SPIKE components, and Pybricks Python logic ensured PiolínTech had a rock solid foundation. Mastering blind acoustic navigation proved that our fundamental math and chassis design were flawless.
-
-```
